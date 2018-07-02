@@ -1,7 +1,7 @@
 title: szetyng
 name: Sze Tyng Lee
 email: lee.szetyng@gmail.com
-description: Website and personal portfolio.
+description: Software developer.
 
 baseurl: "/blog"
 url: ""
@@ -21,12 +21,12 @@ project_two_icon: photo_camera
 
 
 project_three: ARM Emulator
-project_three_description: Wrote an ARM emulator in F# that is able to parse and simulate a subset of the ARM UAL instructions.
+project_three_description: Wrote an ARM emulator in F# that is able to parse and simulate a subset of the ARM UAL instructions. Thoroughly tested against <a href="https://salmanarif.bitbucket.io/visual/" target="_blank">VisUAL</a>, a visual ARM emulator used in Introduction to Computer Architecture.
 project_three_url: https://github.com/szetyng/HLP5
 project_three_icon: hotel
 
 project_four: AceCaddie
-project_four_description: Used an accelerometer to build an IoT device. When playing with a golf club that has the device attached to it, the golf score can be tracked automatically and the accompanying mobile app allows friends to compete with each other.
+project_four_description: Used an accelerometer to build an IoT device that tracks golf scores automatically when attached to the golf club. The accompanying mobile app allows friends to compete against each other.
 project_four_url: https://github.com/szetyng/embedded
 project_four_icon: restaurant
 
