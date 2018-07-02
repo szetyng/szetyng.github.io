@@ -7,7 +7,7 @@ baseurl: "/blog"
 url: ""
 
 parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
-parallax_image_two: assets/images/background3.jpg
+parallax_image_two: assets/images/penang.jpg
 
 project_one: VS Code IPE
 project_one_description: Collaborated with Microsoft to create an interactive programming experience that combines the rich editor experience of Visual Studio Code with the interactive programming model of Jupyter Notebook.
@@ -25,14 +25,14 @@ project_three_description: Wrote an ARM emulator in F# using functional programm
 project_three_url: https://github.com/szetyng/HLP5
 project_three_icon: hotel
 
-
-project_four: SortBot
-project_four_description: Implemented a classifier that uses machine vision to sort items into four different recycling categories for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by awarding points to users through an accompanying mobile app.
-project_four_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
+project_four: AceCaddie
+project_four_description: Description
+project_four_url: https://github.com/szetyng/embedded
 project_four_icon: restaurant
 
-project_five: EEBug
-project_five_description: Used an ATtiny microcontroller and Arduino to create a line-following robot that turns in a spiral and stops automatically after the line has faded.
+project_five: SortBot
+project_five_description: Implemented a classifier that uses machine vision to sort items into four different recycling categories for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by awarding points to users through an accompanying mobile app.
+project_five_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
 project_five_icon: restaurant
 
 project_six: 2048 Game
