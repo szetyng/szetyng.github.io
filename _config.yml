@@ -14,9 +14,9 @@ project_one_description: Collaborated with Microsoft to create an interactive pr
 project_one_url: https://github.com/lorenzo2897/vscode-ipe
 project_one_icon: location_on
 
-project_two: Spam Detection using Machine Learning
+project_two: Spam Detection
 project_two_description: Applied the theory learned in Introduction to Machine Learning to classify emails as either spam or ham.
-project_two_url: https://github.com/jameshamann/jekyll-material-theme
+project_two_url: https://github.com/szetyng/machine-learning-spam
 project_two_icon: photo_camera
 
 
@@ -27,17 +27,16 @@ project_three_icon: hotel
 
 
 project_four: SortBot
-project_four_description: Built a self-sorting recycling machine.
+project_four_description: Implemented a classifier that uses machine vision to sort items into four different recycling categories for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by awarding points to users through an accompanying mobile app.
 project_four_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
 project_four_icon: restaurant
 
 project_five: EEBug
-project_five_description: Describe your project!
-project_five_url: https://github.com/jameshamann/jekyll-material-theme
+project_five_description: Used an ATtiny microcontroller and Arduino to create a line-following robot that turns in a spiral and stops automatically after the line has faded.
 project_five_icon: restaurant
 
 project_six: 2048 Game
-project_six_description: Describe your project!
+project_six_description: Recreated the popular 2048 game in C++.
 project_six_url: https://github.com/jameshamann/jekyll-material-theme
 project_six_icon: restaurant
 
@@ -63,7 +62,7 @@ skills:
 icon_size: 50 # font-size of icons in px
 colored: colored # Leave blank for black and white icons
 
-project_button: Link
+project_button: Github
 
 github: https://github.com/szetyng
 linkedin: https://www.linkedin.com/in/leeszetyng/
