@@ -6,8 +6,8 @@ description: Website and personal portfolio for Sze Tyng Lee.
 baseurl: "/blog"
 url: ""
 
-parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
-parallax_image_two: assets/images/startup3.jpg
+parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
+parallax_image_two: assets/images/background3.jpg
 
 project_one: VS Code IPE
 project_one_description: Created an extension that seamlessly combines the power of Visual Studio Code with the interactivity of Jupyter Notebook.
