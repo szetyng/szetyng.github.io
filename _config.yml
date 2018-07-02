@@ -21,12 +21,12 @@ project_two_icon: photo_camera
 
 
 project_three: ARM Emulator
-project_three_description: Wrote an ARM emulator in F# using functional programming concepts. 
+project_three_description: Wrote an ARM emulator in F# that is able to parse and simulate a subset of the ARM UAL instructions.
 project_three_url: https://github.com/szetyng/HLP5
 project_three_icon: hotel
 
 project_four: AceCaddie
-project_four_description: Description
+project_four_description: Used an accelerometer to build an IoT device. When playing with a golf club that has the device attached to it, the golf score can be tracked automatically and the accompanying mobile app allows friends to compete with each other.
 project_four_url: https://github.com/szetyng/embedded
 project_four_icon: restaurant
 
@@ -35,7 +35,7 @@ project_five_description: Implemented a classifier that uses machine vision to s
 project_five_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
 project_five_icon: restaurant
 
-project_six: 2048 Game
+project_six: 2048
 project_six_description: Recreated the popular 2048 game in C++.
 project_six_url: https://github.com/jameshamann/jekyll-material-theme
 project_six_icon: restaurant
