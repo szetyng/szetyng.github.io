@@ -1,7 +1,7 @@
 title: szetyng
 name: Sze Tyng Lee
 email: lee.szetyng@gmail.com
-description: Software developer.
+description: Electrical and electronic engineer.
 
 baseurl: "" # if your site is located at /blog or /home, enter it here, otherwise leave it as '/'
 url: ""
@@ -46,17 +46,17 @@ portfolio_type: cards
 syntax_highlighting: true
 # Skill icons from https://konpa.github.io/devicon/
 
-skills:
-  - name: angularjs
-  - name: c
-  - name: cplusplus
-  - name: git
-  - name: github
-  - name: java
-  - name: javascript
-  - name: nodejs
-  - name: python
-  - name: typescript
+# skills:
+#   - name: angularjs
+#   - name: c
+#   - name: cplusplus
+#   - name: git
+#   - name: github
+#   - name: java
+#   - name: javascript
+#   - name: nodejs
+#   - name: python
+#   - name: typescript
 
 
 icon_size: 50 # font-size of icons in px

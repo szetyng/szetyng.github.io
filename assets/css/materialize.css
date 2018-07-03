@@ -9419,7 +9419,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 }
 
 .icon-fsharp {
-  background: url('https://docs.microsoft.com/en-us/dotnet/images/hub/fsharp.svg');
+  background: url("../images/skills-icons/fsharp.svg");
   height: 50px;
   width: 50px;
   display: inline-block;
