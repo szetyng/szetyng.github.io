@@ -10,28 +10,42 @@ parallax_image_one: assets/images/laptop2.jpg # These are the images used for th
 parallax_image_two: assets/images/penang.jpg
 
 project_one: VS Code IPE
-project_one_description: Collaborated with Microsoft to create an interactive programming experience that combines the rich editor experience of Visual Studio Code with the interactive programming model of Jupyter Notebook.
+project_one_description: >
+  Collaborated with Microsoft to create an extension for Visual Studio Code that
+  combines the rich editor experience of the code editor with the interactive programming
+  model of Jupyter notebook.
 project_one_url: https://github.com/lorenzo2897/vscode-ipe
 project_one_icon: location_on
 
 project_two: Spam Detection
-project_two_description: Applied the theory learned in Introduction to Machine Learning to classify emails as either spam or ham.
+project_two_description: >
+  Applied the theory learned in Introduction to Machine Learning to classify emails as either spam or ham.
 project_two_url: https://github.com/szetyng/machine-learning-spam
 project_two_icon: photo_camera
 
 
 project_three: ARM Emulator
-project_three_description: Wrote an ARM emulator in F# that is able to parse and simulate a subset of the ARM UAL instructions. Thoroughly tested against <a href="https://salmanarif.bitbucket.io/visual/" target="_blank">VisUAL</a>, a visual ARM emulator used in Introduction to Computer Architecture.
+project_three_description: >
+  Wrote and fully tested an ARM emulator in F#. The programme is able to parse and consecutively simulate a subset of the 
+  ARM UAL instructions. Aimed to recreate <a href="https://salmanarif.bitbucket.io/visual/" target="_blank">VisUAL</a>,
+  a visual ARM emulator used in Introduction to Computer Architecture in Imperial College London as an aide in teaching the
+  ARM assembly language.
+
 project_three_url: https://github.com/szetyng/HLP5
 project_three_icon: hotel
 
 project_four: AceCaddie
-project_four_description: Used an accelerometer to build an IoT device that tracks golf scores automatically when attached to the golf club. The accompanying mobile app allows friends to compete against each other.
+project_four_description: >
+  Used an accelerometer to build an IoT device that tracks golf scores automatically when it is 
+  attached to the golf club in use. The accompanying mobile app allows friends to compete against each other.
 project_four_url: https://github.com/szetyng/embedded
 project_four_icon: restaurant
 
 project_five: SortBot
-project_five_description: Implemented a classifier that uses machine vision to sort items into four different recycling categories for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by awarding points to users through an accompanying mobile app.
+project_five_description: >
+  Implemented a classifier that uses machine vision to sort items into four different recycling categories 
+  for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by 
+  awarding points to users of the machine through an accompanying mobile app.
 project_five_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
 project_five_icon: restaurant
 
