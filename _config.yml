@@ -3,7 +3,7 @@ name: Sze Tyng Lee
 email: lee.szetyng@gmail.com
 description: Software developer.
 
-baseurl: "/blog"
+baseurl: "" # if your site is located at /blog or /home, enter it here, otherwise leave it as '/'
 url: ""
 
 parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
@@ -66,9 +66,6 @@ project_button: Github
 
 github: https://github.com/szetyng
 linkedin: https://www.linkedin.com/in/leeszetyng/
-
-baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
-url: http://localhost:4000/ #the url of your site
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # This looks something like GTM-XXXXXXX
