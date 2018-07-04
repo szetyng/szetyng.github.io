@@ -4,7 +4,7 @@ email: lee.szetyng@gmail.com
 description: Aspiring electrical and electronic engineer.
 
 baseurl: "" # if your site is located at /blog or /home, enter it here, otherwise leave it as '/'
-url: ""
+url: "szetyng.github.io"
 
 parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/penang.jpg
