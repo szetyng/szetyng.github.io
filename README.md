@@ -1,2 +1,2 @@
 # Website
-Personal website live at szetyng.github.io
+Personal website live at https://szetyng.github.io 
