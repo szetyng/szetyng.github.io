@@ -4,7 +4,7 @@ email: lee.szetyng@gmail.com
 description: Electrical and electronic engineer.
 
 baseurl: "" # if your site is located at /blog or /home, enter it here, otherwise leave it as '/'
-url: ""
+url: "szetyng.github.io"
 
 parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/penang.jpg
@@ -46,12 +46,12 @@ project_five_description: >
   Implemented a classifier that uses machine vision to sort items into four different recycling categories 
   for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by 
   awarding points to users of the machine through an accompanying mobile app.
-project_five_url: http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm
+project_five_url: https://github.com/szetyng/sortbot
 project_five_icon: restaurant
 
 project_six: 2048
 project_six_description: Recreated the popular 2048 game in C++.
-project_six_url: https://github.com/jameshamann/jekyll-material-theme
+project_six_url: https://github.com/szetyng/2048
 project_six_icon: restaurant
 
 portfolio_heading: Projects
