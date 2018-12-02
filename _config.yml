@@ -1,20 +1,21 @@
 title: szetyng
 name: Sze Tyng Lee
 email: lee.szetyng@gmail.com
-description: Aspiring electrical and electronic engineer.
+description: Aspiring software engineer.
 
 baseurl: "" # if your site is located at /blog or /home, enter it here, otherwise leave it as '/'
-url: "szetyng.github.io"
+url: ""
 
-parallax_image_one: assets/images/laptop2.jpg # These are the images used for the parallax background
+parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/penang.jpg
 
 project_one: neuron
 project_one_description: >
-  Collaborated with Microsoft to create an extension for Visual Studio Code. It
-  combines the rich experience of using the code editor with the interactive programming
-  model of Jupyter notebook.
-project_one_url: https://github.com/lorenzo2897/vscode-ipe
+  Collaborated with Microsoft to create an extension for Visual Studio Code, which has since been 
+  <a href="https://blogs.msdn.microsoft.com/pythonengineering/2018/11/08/data-science-with-python-in-visual-studio-code/?fbclid=IwAR3M5REwXMSCxgCCiqKez_cMJr4WVYYy1DA3UjjjnhpNGDluQiSo4GnhBk0" target="_blank">incorporated into their Python extension</a> 
+  as part of their Data Science features. It combines the 
+  rich experience of using the code editor with the interactive programming model of Jupyter notebook.
+project_one_url: https://github.com/neuron-team/vscode-ipe
 project_one_icon: location_on
 
 project_two: Spam Detection
