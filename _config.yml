@@ -9,6 +9,25 @@ url: ""
 parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/penang.jpg
 
+project_satu: Guardrails
+project_satu_description: >
+  Designed and built a multi-agent system simulator in F# to investigate the effects of having minimal 
+  recognition of rights to self-organise (i.e. guardrails) on the sustainability of electronic institutions. Using 
+  the method of sociologically-inspired computing, these institutions are designed according to the 
+  <a href="https://en.wikipedia.org/wiki/Elinor_Ostrom#Design_principles_for_Common_Pool_Resource_(CPR)_institution" target="_blank">principles</a> 
+  proposed by political economist, Elinor Ostrom.
+project_satu_url: https://github.com/szetyng/Guardrails
+project_satu_icon: restaurant
+
+project_dua: CaterPillar
+project_dua_description: >
+  Developed a smart pill organiser to improve pill adherence and reduce medication errors among
+  the elderly. The CaterPillar system involves an electronic pillbox and Android applications for
+  tablets and smartwatches. It learns to provide adaptive reminders based on data regarding the 
+  user's daily routines.
+project_dua_url: https://github.com/elisaherme/CaterPillar
+project_dua_icon: hotel
+
 project_one: neuron
 project_one_description: >
   Collaborated with Microsoft to create an extension for Visual Studio Code, which has since been 
