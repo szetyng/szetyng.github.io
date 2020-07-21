@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar
+    <!-- <v-app-bar
       fixed
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-main>
       <v-container>
