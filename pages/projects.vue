@@ -30,7 +30,22 @@
 								min-height="250px"
 								flat
 							>
-								<v-card-text><span v-html="project.description"></span></v-card-text>
+								<v-container>
+									<v-row justify="end">
+										<v-col cols="2">
+											<!-- <v-card-actions> -->
+												<v-btn
+													icon
+													@click="closeProjectInfo(project)"
+												>
+													<v-icon>mdi-close</v-icon>
+												</v-btn>
+											<!-- </v-card-actions> -->
+										</v-col>
+									</v-row>
+
+									<v-card-text><span v-html="project.description"></span></v-card-text>
+								</v-container>
 							</v-card>
 
 							<v-card-title 
@@ -161,6 +176,14 @@ export default {
 			console.log(project.title)
 
 			project.expand = true;
+
+			let projIdx = this.projects.findIndex(p => p.title === project.title);
+			this.projects[projIdx] = project;
+		},
+		closeProjectInfo(project) {
+			console.log(project.title)
+
+			project.expand = false;
 
 			let projIdx = this.projects.findIndex(p => p.title === project.title);
 			this.projects[projIdx] = project;
