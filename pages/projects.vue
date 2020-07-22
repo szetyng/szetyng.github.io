@@ -5,7 +5,6 @@
 			:items="projects"
 			hide-default-footer
 		>
-
 			<template>
 				<v-row>
 					<v-col
@@ -17,11 +16,31 @@
 						<v-card
 							min-height="300"
 						>
-							<v-card-title>{{ project.title }}</v-card-title>
-							<v-card-text>
-								{{ project.description }}
+							<v-img
+								v-if="!project.expand"
+								:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
+								height="250px"
+								class="project-img"
+								contain
+								@click="displayProjectInfo(project)"
+							>
+							</v-img>
+							<v-card 
+								v-else
+								min-height="250px"
+							>
+								<v-card-text><span v-html="project.description"></span></v-card-text>
+							</v-card>
 
-							</v-card-text>
+							<v-card-title>{{ project.title }}</v-card-title>
+							<v-card-actions>
+								<v-btn
+									text
+									:href="project.url"
+								>
+									Github
+								</v-btn>
+							</v-card-actions>
 						</v-card>
 
 					</v-col>
@@ -49,6 +68,8 @@ export default {
 					proposed by political economist, Elinor Ostrom.\
 					",
 					url: "https://github.com/szetyng/Guardrails",
+					imgSrc: "institution.jpg",
+					expand: false
 				},
 				{
 					title: 'CaterPillar',
@@ -58,7 +79,9 @@ export default {
 							tablets and smartwatches. It learns to provide adaptive reminders based on data regarding the \
 							user's daily routines.\
 					",
-					url: "https://github.com/szetyng/CaterPillar"
+					url: "https://github.com/szetyng/CaterPillar",
+					imgSrc: "caterpillar.png",
+					expand: false
 				},
 				{
 					title: 'neuron',
@@ -68,14 +91,18 @@ export default {
 						as part of their Data Science features. It combines the \
 						rich experience of using the code editor with the interactive programming model of Jupyter notebook.\
 					",
-					url: "https://github.com/neuron-team/vscode-ipe"
+					url: "https://github.com/neuron-team/vscode-ipe",
+					imgSrc: "neuron.png",
+					expand: false
 				},
 				{
 					title: 'Spam Detection',
 					description: "\
 						Applied the theory learned in Introduction to Machine Learning to classify emails as either spam or ham.\
 					",
-					url: "https://github.com/szetyng/machine-learning-spam"
+					url: "https://github.com/szetyng/machine-learning-spam",
+					imgSrc: "laptop.png",
+					expand: false
 				},
 				{
 					title: 'ARM Emulator',
@@ -85,7 +112,9 @@ export default {
 						a visual ARM emulator used in Introduction to Computer Architecture in Imperial College London as an aide in teaching the \
 						ARM assembly language.\
 					",
-					url: "https://github.com/szetyng/HLP5"
+					url: "https://github.com/szetyng/HLP5",
+					imgSrc: "arm-emulator.png",
+					expand: false
 				},
 				{
 					title: "AceCaddie",
@@ -93,7 +122,9 @@ export default {
 						Used an accelerometer to build an IoT device that tracks golf scores automatically when it is \
 						attached to the golf club in use. The accompanying mobile app allows friends to compete against each other.\
 					",
-					url: "https://github.com/szetyng/embedded"
+					url: "https://github.com/szetyng/embedded",
+					imgSrc: "acecaddie.png",
+					expand: false
 				},
 				{
 					title: "SortBot",
@@ -102,16 +133,30 @@ export default {
 						for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by \
 						awarding points to users of the machine through an accompanying mobile app.\
 					",
-					url: "https://github.com/szetyng/sortbot"
+					url: "https://github.com/szetyng/sortbot",
+					imgSrc: "sortbot.png",
+					expand: false
 				},
 				{
 					title: "2048",
 					description: "\
 						Recreated the popular 2048 game in C++.\
 					",
-					url: "https://github.com/szetyng/2048"
+					url: "https://github.com/szetyng/2048",
+					imgSrc: "2048.png",
+					expand: false
 				}
 			]
+		}
+	},
+	methods: {
+		displayProjectInfo(project) {
+			console.log(project.title)
+
+			project.expand = true;
+
+			let projIdx = this.projects.findIndex(p => p.title === project.title);
+			this.projects[projIdx] = project;
 		}
 	}
 	
@@ -120,5 +165,13 @@ export default {
 
 
 <style scoped>
+.project-img {
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+}
 
+.project-img:hover {
+	cursor: pointer;
+}
 </style>

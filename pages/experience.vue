@@ -36,7 +36,7 @@ export default {
 		return {
 			jobs: [
 				{
-					year: "2019 - present",
+					year: "Nov 2019 - present",
 					title: "MMC Gamuda KVMRT (T) Pte. Ltd.",
 					subtitle: "Full-stack software developer",
 					description: "\
@@ -46,7 +46,7 @@ export default {
 					icon: "mdi-office-building"
 				},
 				{
-					year: "2015 - 2019",
+					year: "Oct 2015 - Jun 2019",
 					title: "Imperial College London",
 					subtitle: "M.Eng Electrical and Electronic Engineering",
 					description: "\

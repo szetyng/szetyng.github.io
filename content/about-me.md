@@ -7,4 +7,4 @@ I am a recent electrical and electronic engineering graduate from Imperial Colle
 
 In my free time, I like to read about history and have recently become fascinated with sociology and psychology. I also enjoy playing Ultimate Frisbee.
 
-Do send me an [email](lee.szetyng@gmail.com) if you would like to take a look at my CV.
+Do send me an email at [lee.szetyng@gmail.com](mailto:lee.szetyng@gmail.com) if you would like to take a look at my CV.
