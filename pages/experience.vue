@@ -32,6 +32,7 @@
 
 <script>
 export default {
+	name: "ExperiencePage",
 	data() {
 		return {
 			jobs: [

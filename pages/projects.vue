@@ -28,11 +28,17 @@
 							<v-card 
 								v-else
 								min-height="250px"
+								flat
 							>
 								<v-card-text><span v-html="project.description"></span></v-card-text>
 							</v-card>
 
-							<v-card-title>{{ project.title }}</v-card-title>
+							<v-card-title 
+								class="project-title"
+								@click="displayProjectInfo(project)"
+							>
+								{{ project.title }}
+							</v-card-title>
 							<v-card-actions>
 								<v-btn
 									text
@@ -55,6 +61,7 @@
 
 <script>
 export default {
+	name: "ProjectsPage",
 	data() {
 		return {
 			projects: [
@@ -172,6 +179,10 @@ export default {
 }
 
 .project-img:hover {
+	cursor: pointer;
+}
+
+.project-title:hover {
 	cursor: pointer;
 }
 </style>

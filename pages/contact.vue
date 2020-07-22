@@ -19,6 +19,7 @@
 								link
 								:href="contact.link"
 								:color="contact.color"
+								dark
 							>
 								{{ contact.title }} <v-icon right>{{ contact.icon }}</v-icon>
 							</v-btn>
@@ -33,6 +34,7 @@
 
 <script>
 export default {
+	name: "ContactPage",
 	data() {
 		return {
 			contacts: [
