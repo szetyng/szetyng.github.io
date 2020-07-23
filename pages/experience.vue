@@ -9,6 +9,7 @@
 						:key="i"
 						:color="job.color"
 						:icon="job.icon"
+						fill-dot
 						large
 					>
 						<template v-slot:icon>
