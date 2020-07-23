@@ -6,64 +6,98 @@
 			hide-default-footer
 		>
 			<template>
-				<v-row>
-					<v-col
-						v-for="project in projects"
-						:key="project.title"
-						cols="12"
-						sm="12" md="6"
-					>
-						<v-card
-							min-height="300"
-						>
-							<v-img
-								v-if="!project.expand"
-								:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
-								height="250px"
-								class="project-img"
-								contain
-								@click="displayProjectInfo(project)"
+				<v-row no-gutters justify="center">
+					<v-col cols="12" md="10">
+						<v-row>
+							<v-col
+								v-for="project in projects"
+								:key="project.title"
+								cols="12"
+								sm="12" md="6"
 							>
-							</v-img>
-							<v-card 
-								v-else
-								min-height="250px"
-								flat
-							>
-								<v-container>
-									<v-row justify="end">
-										<v-col cols="2">
-											<!-- <v-card-actions> -->
-												<v-btn
-													icon
-													@click="closeProjectInfo(project)"
-												>
-													<v-icon>mdi-close</v-icon>
-												</v-btn>
-											<!-- </v-card-actions> -->
-										</v-col>
-									</v-row>
-
-									<v-card-text><span v-html="project.description"></span></v-card-text>
-								</v-container>
-							</v-card>
-
-							<v-card-title 
-								class="project-title"
-								@click="displayProjectInfo(project)"
-							>
-								{{ project.title }}
-							</v-card-title>
-							<v-card-actions>
-								<v-btn
-									text
-									:href="project.url"
+								
+								<v-card
+									min-height="300"
 								>
-									Github
-								</v-btn>
-							</v-card-actions>
-						</v-card>
+									<!-- Top part of card: either an image of the project or the description of the project -->
+									<!-- Image of the project  -->
+									<v-img
+										v-if="!project.expand"
+										:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
+										height="250px"
+										class="project-img"
+										contain
+										@click="displayProjectInfo(project)"
+									>
+									</v-img>
 
+									<!-- Description of the project -->
+									<v-card 
+										v-else
+										min-height="250px"
+										outlined
+									>
+										<v-container fluid>
+											<!-- Close button at the top right corner -->
+											<span class="card-right">
+												<v-btn icon @click="closeProjectInfo(project)">
+													<v-icon color="black">mdi-close</v-icon>
+												</v-btn>
+											</span>
+
+											<!-- Description text in HTML because it includes links  -->
+											<v-card-text>
+												<span v-html="project.description"></span>
+											</v-card-text>
+
+											<v-card-actions>
+												<v-btn 
+													v-for="(link, i) in project.links"
+													:key="i"
+													dark 
+													elevation="10"
+													tile
+													:color="link.color"
+													:href="link.url"
+												>
+													{{ link.title }} 
+													<v-icon right>{{ link.title | iconify }}</v-icon>
+												</v-btn>
+											</v-card-actions>
+
+										</v-container>
+									</v-card>
+
+									<!-- Bottom part of the card: always visible -->
+									<!-- Title row: title + vertical dots icon button  -->
+									<span class="card-right card-top">
+										<v-btn icon @click="displayProjectInfo(project)">
+											<v-icon color="black">
+												mdi-dots-vertical
+											</v-icon>
+										</v-btn>
+									</span>
+
+									<v-card-title
+										class="project-title"
+										@click="displayProjectInfo(project)"
+									>
+										{{ project.title }}
+									</v-card-title>
+
+									<!-- Github link to the project  -->
+									<v-card-actions>
+										<v-btn
+											text
+											:href="project.url"
+											color="deep-orange accent-4"
+										>
+											Github
+										</v-btn>
+									</v-card-actions>
+								</v-card>
+							</v-col>
+						</v-row>
 					</v-col>
 				</v-row>
 
@@ -90,6 +124,13 @@ export default {
 					proposed by political economist, Elinor Ostrom.\
 					",
 					url: "https://github.com/szetyng/Guardrails",
+					links: [
+						{
+							url: "https://drive.google.com/open?id=1fzMeVbB9MzWxGHrpk6X85kNun_6NYvJ8OUVmduqiQtc",
+							color: "grey darken-2",
+							title: "Slides"
+						}
+					],
 					imgSrc: "institution.jpg",
 					expand: false
 				},
@@ -102,6 +143,13 @@ export default {
 							user's daily routines.\
 					",
 					url: "https://github.com/szetyng/CaterPillar",
+					links: [
+						{
+							url: "https://youtu.be/Fv4SDEJEMSU",
+							color: "grey darken-2",
+							title: "Demo Video"
+						}
+					],
 					imgSrc: "caterpillar.png",
 					expand: false
 				},
@@ -114,6 +162,13 @@ export default {
 						rich experience of using the code editor with the interactive programming model of Jupyter notebook.\
 					",
 					url: "https://github.com/neuron-team/vscode-ipe",
+					links: [
+						{
+							url: "https://youtu.be/amuV0z9eVg4",
+							color: "grey darken-2",
+							title: "Demo Video"
+						}
+					],
 					imgSrc: "neuron.png",
 					expand: false
 				},
@@ -145,6 +200,13 @@ export default {
 						attached to the golf club in use. The accompanying mobile app allows friends to compete against each other.\
 					",
 					url: "https://github.com/szetyng/embedded",
+					links: [
+						{
+							url: "https://dharshana1407.wixsite.com/acecaddie",
+							color: "grey darken-2",
+							title: "Website"
+						}
+					],
 					imgSrc: "acecaddie.png",
 					expand: false
 				},
@@ -156,6 +218,18 @@ export default {
 						awarding points to users of the machine through an accompanying mobile app.\
 					",
 					url: "https://github.com/szetyng/sortbot",
+					links: [
+						{
+							url: "http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm",
+							color: "grey darken-2",
+							title: "Website"
+						},
+						{
+							url: "https://szetyng.github.io/assets/videos/sortbot.mp4",
+							color: "green darken-2",
+							title: "App Demo"
+						}
+					],
 					imgSrc: "sortbot.png",
 					expand: false
 				},
@@ -188,6 +262,17 @@ export default {
 			let projIdx = this.projects.findIndex(p => p.title === project.title);
 			this.projects[projIdx] = project;
 		}
+	},
+	filters: {
+		iconify: title => {
+			if (title === "Website") {
+				return "mdi-open-in-app"
+			} else if (title === "App Demo" || title === "Demo Video") {
+				return "mdi-video"
+			} else if (title === "Slides") {
+				return "mdi-play-box-outline"
+			}
+		}
 	}
 	
 }
@@ -207,5 +292,19 @@ export default {
 
 .project-title:hover {
 	cursor: pointer;
+}
+
+.project-expand:hover {
+	cursor: pointer;
+}
+
+.card-right {
+	float: right;
+	margin-left: 15px;
+}
+
+.card-top {
+	float: top;
+	margin-top: 10px;
 }
 </style>
