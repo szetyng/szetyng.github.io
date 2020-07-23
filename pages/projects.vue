@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-		<h1>Projects</h1>
+		<!-- <h1>Projects</h1> -->
 		<v-data-iterator
 			:items="projects"
 			hide-default-footer
@@ -15,29 +15,27 @@
 								cols="12"
 								sm="12" md="6"
 							>
-								
 								<v-card
 									min-height="300"
 								>
 									<!-- Top part of card: either an image of the project or the description of the project -->
 									<!-- Image of the project  -->
-									<v-img
-										v-if="!project.expand"
-										:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
+									<v-card
 										height="250px"
-										class="project-img"
-										contain
-										@click="displayProjectInfo(project)"
-									>
-									</v-img>
-
-									<!-- Description of the project -->
-									<v-card 
-										v-else
-										min-height="250px"
 										outlined
 									>
-										<v-container fluid>
+										<v-img
+											v-if="!project.expand"
+											:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
+											height="250px"
+											class="project-img"
+											contain
+											@click="displayProjectInfo(project)"
+										>
+										</v-img>
+
+									<!-- Description of the project -->
+										<v-container v-else fluid>
 											<!-- Close button at the top right corner -->
 											<span class="card-right">
 												<v-btn icon @click="closeProjectInfo(project)">
@@ -46,7 +44,7 @@
 											</span>
 
 											<!-- Description text in HTML because it includes links  -->
-											<v-card-text>
+											<v-card-text >
 												<span v-html="project.description"></span>
 											</v-card-text>
 
@@ -283,6 +281,8 @@ export default {
 .project-img {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 	width: auto;
 }
 
