@@ -21,7 +21,14 @@
 <script>
 export default {
 	name: "Homepage",
-
+	head() {
+		return {
+			title: "Home",
+			meta: [
+				{hid: 'description', name: 'description', content: "Homepage for Sze Tyng Lee's website"}
+			]
+		}
+	},
 	data() {
 		return {
 		}

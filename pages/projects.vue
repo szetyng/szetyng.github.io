@@ -23,11 +23,12 @@
 									<v-card
 										height="250px"
 										outlined
+										class="scroll"
 									>
 										<v-img
 											v-if="!project.expand"
 											:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
-											height="250px"
+											height="245px"
 											class="project-img"
 											contain
 											@click="displayProjectInfo(project)"
@@ -109,6 +110,14 @@
 <script>
 export default {
 	name: "ProjectsPage",
+	head() {
+		return {
+			title: "Projects",
+			meta: [
+				{hid: 'description', name: 'description', content: "Portfolifo of Sze Tyng Lee's projects"}
+			]
+		}
+	},
 	data() {
 		return {
 			projects: [
@@ -306,5 +315,9 @@ export default {
 .card-top {
 	float: top;
 	margin-top: 10px;
+}
+
+.scroll {
+	overflow-y: auto;
 }
 </style>

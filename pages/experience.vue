@@ -44,6 +44,14 @@
 <script>
 export default {
 	name: "ExperiencePage",
+	head() {
+		return {
+			title: "Experience",
+			meta: [
+				{hid: 'description', name: 'description', content: "Sze Tyng Lee's experience - education and career timeline"}
+			]
+		}
+	},
 	data() {
 		return {
 			jobs: [
