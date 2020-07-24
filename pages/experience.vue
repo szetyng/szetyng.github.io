@@ -18,19 +18,19 @@
 							</v-avatar>
 						</template>
 
-						<template v-slot:opposite v-if="!smallScreen">
+						<!-- <template v-slot:opposite v-if="!smallScreen">
 							<span
 								:class="`headline font-weight-bold ${job.color}--text`"
 								v-text="job.year"
 							>
 							</span>
-						</template>
+						</template> -->
 
 						<div class="py-4">
-							<span v-if="smallScreen" class="overline font-weight-medium grey-text text--darken-2">
+							<span class="overline font-weight-medium grey-text text--darken-2">
 								{{ job.year }}
 							</span>
-							<h2 :class="`headline font-weight-bold mb-4 ${job.color}--text`">{{ job.title }}</h2>
+							<h2 :class="`font-weight-light mb-4 ${job.color}--text`">{{ job.title }}</h2>
 							<h3 class="subtitle font-weight-light">{{ job.subtitle }}</h3>
 							<div>
 								{{ job.description }}

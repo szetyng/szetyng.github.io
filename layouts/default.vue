@@ -98,7 +98,7 @@ export default {
   float: left;
   margin-top: 23px;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .mobile-navbar .site-info {
@@ -109,7 +109,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .normal-navbar .nav {

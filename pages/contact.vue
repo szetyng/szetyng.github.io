@@ -12,7 +12,7 @@
 						<v-row align="end" justify="center">
 						<v-col cols="12">
 						
-						<v-card-title class="black--text justify-center display-1 font-weight-light mt-0 pt-0">
+						<v-card-title class="black--text justify-center text-h4 font-weight-light mt-0 pt-0">
 							Contact me
 						</v-card-title>
 

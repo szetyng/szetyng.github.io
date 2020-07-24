@@ -78,7 +78,7 @@
 									</span>
 
 									<v-card-title
-										class="project-title"
+										class="project-title text-h5 font-weight-light"
 										@click="displayProjectInfo(project)"
 									>
 										{{ project.title }}
