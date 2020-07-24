@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-container>
+    <v-container :class="{'mobile-navbar': smallScreen, 'normal-navbar': !smallScreen}">
       <v-row justify="center">
         <v-col cols="12" md="10">
           <div class="site-info">
@@ -79,6 +79,11 @@ export default {
         {title: "contact me", link: "/contact"}
       ]
     }
+  },
+  computed: {
+    smallScreen() {
+      return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm
+    }
   }
 }
 </script>
@@ -89,31 +94,57 @@ export default {
   margin-top: -30px;
 }
 
-.site-info {
+.normal-navbar .site-info {
   float: left;
   margin-top: 23px;
   font-size: 20px;
   font-weight: 800;
 }
 
-.nav {
+.mobile-navbar .site-info {
+  text-align: center;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.normal-navbar .nav {
   float: right;
   margin-top: 23px;
   font-size: 20px;
   font-weight: 400;
 }
 
+.mobile-navbar .nav {
+  float: none;
+  margin-top: 9px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
 .nav a, .site-info a {
   margin-left: 10px;
   color: #333;
-  text-align: right;
-  
-  letter-spacing: 1px;
   text-decoration: none;
   cursor: pointer;
 }
 
+
+.normal-navbar .nav a {
+  text-align: right;
+  letter-spacing: 1px;
+}
+
 .nav a:hover, .site-info a:hover {
+  color: cadetblue;
+}
+
+.mobile-navbar .nav a {
   color: cadetblue;
 }
 
