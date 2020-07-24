@@ -75,14 +75,14 @@ export default {
         {title: "about me", link: "/about-me"},
         {title: "projects", link: "/projects"},
         {title: "experience", link: "/experience"},
-        {title: "blog", link: "/blog"},
+        // {title: "blog", link: "/blog"},
         {title: "contact me", link: "/contact"}
       ]
     }
   },
   computed: {
     smallScreen() {
-      return this.$vuetify.breakpoint.xs || this.$vuetify.breakpoint.sm
+      return this.$vuetify.breakpoint.xs 
     }
   }
 }

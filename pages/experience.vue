@@ -3,7 +3,7 @@
 		<!-- <h1>Experience</h1> -->
 		<v-row justify="center">
 			<v-col cols="12" md="10">
-				<v-timeline>
+				<v-timeline :dense="smallScreen">
 					<v-timeline-item
 						v-for="(job, i) in jobs"
 						:key="i"
@@ -18,7 +18,7 @@
 							</v-avatar>
 						</template>
 
-						<template v-slot:opposite>
+						<template v-slot:opposite v-if="!smallScreen">
 							<span
 								:class="`headline font-weight-bold ${job.color}--text`"
 								v-text="job.year"
@@ -27,6 +27,9 @@
 						</template>
 
 						<div class="py-4">
+							<span v-if="smallScreen" class="overline font-weight-medium grey-text text--darken-2">
+								{{ job.year }}
+							</span>
 							<h2 :class="`headline font-weight-bold mb-4 ${job.color}--text`">{{ job.title }}</h2>
 							<h3 class="subtitle font-weight-light">{{ job.subtitle }}</h3>
 							<div>
@@ -102,7 +105,12 @@ export default {
 				}
 			]
 		}
-	}
+	},
+	computed: {
+    smallScreen() {
+      return this.$vuetify.breakpoint.xs 
+    }
+  }
 }
 </script>
 
