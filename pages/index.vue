@@ -1,19 +1,22 @@
 <template>
-	<v-container>
-	<v-parallax
-		:src="require('~/assets/images/startup3.jpg')"
+	<v-container fill-height>
+	<!-- <v-parallax
+		:src="require('~/assets/images/penang.jpg')"
 		class="parallax"
 		height="100%"
 		jumbotron
-	>
-		<span class="text-h2 font-weight-thick text-center grey--text text--darken-4">Sze Tyng Lee</span>
-		<br>
-		<span class="text-h4 font-weight-light text-center grey--text text--darken-4">Software developer.</span>
+	> -->
+		<v-row justify="center" align="center">
+			<v-col class="text-center">
+				<h2 class="text-h2 font-weight-thick text-center black--text text--darken-1">Sze Tyng Lee</h2>
+				<br>
+				<h4 class="text-h4 font-weight-light text-center black--text text--darken-1">Software developer.</h4>
+				<br>
+			</v-col>
+		</v-row>
 
 
-
-
-	</v-parallax>
+	<!-- </v-parallax> -->
 	</v-container>
 </template>
 

@@ -1,6 +1,37 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-container>
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <div class="site-info">
+            <a href="/" class="site-title">{{ title }}</a>
+          </div>
+          
+          <div class="nav">
+            <a 
+              v-for="(item, i) in links"
+              :key="i"
+              :href="item.link"
+            >
+              {{ item.title }}
+            </a>
+          </div>
+          
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <v-divider></v-divider>
+        </v-col>
+
+      </v-row>
+      
+
+    </v-container>
+
+    
+
+    <!-- <v-app-bar app>
       <v-btn 
         text
         :to="'/'"
@@ -17,10 +48,10 @@
           text
         >{{ item.title }}</v-btn>
       </v-toolbar-items>
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-main>
-      <v-container>
+      <v-container class="main-container">
         <nuxt />
       </v-container>
     </v-main>
@@ -41,13 +72,50 @@ export default {
       title: 'Sze Tyng Lee',
       footer: 'Copyright Sze Tyng Lee | All rights reserved',
       links: [
-        {title: "About me", link: "/about-me"},
-        {title: "Projects", link: "/projects"},
-        {title: "Experience", link: "/experience"},
-        {title: "Blog", link: "/blog"},
-        {title: "Contact me", link: "/contact"}
+        {title: "about me", link: "/about-me"},
+        {title: "projects", link: "/projects"},
+        {title: "experience", link: "/experience"},
+        {title: "blog", link: "/blog"},
+        {title: "contact me", link: "/contact"}
       ]
     }
   }
 }
 </script>
+
+
+<style scoped>
+.main-container {
+  margin-top: -30px;
+}
+
+.site-info {
+  float: left;
+  margin-top: 23px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.nav {
+  float: right;
+  margin-top: 23px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.nav a, .site-info a {
+  margin-left: 10px;
+  color: #333;
+  text-align: right;
+  
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav a:hover, .site-info a:hover {
+  color: cadetblue;
+}
+
+
+</style>

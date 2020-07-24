@@ -12,7 +12,9 @@
 						<v-row align="end" justify="center">
 						<v-col cols="12">
 						
-						<v-card-title class="black--text justify-center display-1 font-weight-light mb-0 pb-0">Contact me</v-card-title>
+						<v-card-title class="black--text justify-center display-1 font-weight-light mt-0 pt-0">
+							Contact me
+						</v-card-title>
 
 						<v-card-actions class="hidden-xs-only">
 							<v-spacer></v-spacer>
@@ -85,7 +87,7 @@ export default {
 
 <style scoped>
 .card-image {
-	max-height: 400px;
+	max-height: 350px;
 }
 
 </style>
