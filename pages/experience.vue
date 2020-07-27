@@ -3,7 +3,7 @@
 		<!-- <h1>Experience</h1> -->
 		<v-row justify="center">
 			<v-col cols="12" md="10">
-				<v-timeline :dense="smallScreen">
+				<v-timeline class="hidden-xs-only">
 					<v-timeline-item
 						v-for="(job, i) in jobs"
 						:key="i"
@@ -18,13 +18,34 @@
 							</v-avatar>
 						</template>
 
-						<!-- <template v-slot:opposite v-if="!smallScreen">
-							<span
-								:class="`headline font-weight-bold ${job.color}--text`"
-								v-text="job.year"
-							>
+						<div class="py-4">
+							<span class="overline font-weight-medium grey-text text--darken-2">
+								{{ job.year }}
 							</span>
-						</template> -->
+							<h2 :class="`font-weight-light mb-4 ${job.color}--text`">{{ job.title }}</h2>
+							<h3 class="subtitle font-weight-light">{{ job.subtitle }}</h3>
+							<div>
+								{{ job.description }}
+							</div>
+						</div>
+					</v-timeline-item>
+				</v-timeline>
+
+
+				<v-timeline class="hidden-sm-and-up" dense>
+					<v-timeline-item
+						v-for="(job, i) in jobs"
+						:key="i"
+						:color="job.color"
+						:icon="job.icon"
+						fill-dot
+						large
+					>
+						<template v-slot:icon>
+							<v-avatar>
+								<img :src="require(`~/assets/images/experience/${job.imgSrc}`)">
+							</v-avatar>
+						</template>
 
 						<div class="py-4">
 							<span class="overline font-weight-medium grey-text text--darken-2">

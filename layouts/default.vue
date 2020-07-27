@@ -1,6 +1,36 @@
 <template>
   <v-app>
-    <v-container :class="{'mobile-navbar': smallScreen, 'normal-navbar': !smallScreen}">
+    <v-container class="normal-navbar hidden-xs-only">
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <div class="site-info">
+            <a href="/" class="site-title">{{ title }}</a>
+          </div>
+          
+          <div class="nav">
+            <a 
+              v-for="(item, i) in links"
+              :key="i"
+              :href="item.link"
+            >
+              {{ item.title }}
+            </a>
+          </div>
+          
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col cols="12" md="10">
+          <v-divider></v-divider>
+        </v-col>
+
+      </v-row>
+      
+
+    </v-container>
+
+
+    <v-container class="mobile-navbar hidden-sm-and-up">
       <v-row justify="center">
         <v-col cols="12" md="10">
           <div class="site-info">
@@ -82,6 +112,7 @@ export default {
   },
   computed: {
     smallScreen() {
+      console.log('HEHEH am i an XS screen?', this.$vuetify.breakpoint.xs);
       return this.$vuetify.breakpoint.xs 
     }
   }
