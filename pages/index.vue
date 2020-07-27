@@ -1,23 +1,71 @@
 <template>
 	<v-container fill-height>
-	<!-- <v-parallax
-		:src="require('~/assets/images/penang.jpg')"
-		class="parallax"
-		height="100%"
-		jumbotron
-	> -->
+		<v-row justify="center" align="center">
+			<v-col class="text-center">
+				<h2 class="text-h2 font-weight-medium text-center black--text text--darken-1">Sze Tyng Lee</h2>
+			</v-col>
+		</v-row>
 
 		<v-row justify="center" align="center">
 			<v-col class="text-center">
-				<h2 class="text-h2 font-weight-thick text-center black--text text--darken-1">Sze Tyng Lee</h2>
+				<h2 class="text-h4 font-weight-light text-center black--text text--darken-1">Software developer</h2>
+			</v-col>
+		</v-row>
+
+		<v-row justify="center" align="center">
+			<v-col class="text-center" cols="12" md="6">
+				<p>
+					M.Eng Electrical and Electronic Engineering from Imperial College London. 
+					CV available upon request.
+				</p>
+			<v-btn
+				nuxt
+				:to="'/contact'"
+				dark
+			>
+				Contact Me
+				<v-icon right>mdi-card-account-details</v-icon>
+			</v-btn>
 			</v-col>
 		</v-row>
 
 		<v-row justify="center">
 			<v-col cols="12" md="10">
+				<v-divider></v-divider>
+			</v-col>
+		</v-row>
 
+		<v-row justify="center">
+			<v-col cols="12" md="10">
+				<v-card>
+				<v-card-title class="justify-center text-h4 font-weight-light">Skills</v-card-title>
 				<v-row justify="center" align="center">
-					<v-col 
+					<v-col class="icons-container" v-for="icon in icons" :key="icon.name" cols="4" md="1">
+						<v-tooltip 
+							bottom
+						>
+							<template v-slot:activator="{ on, attrs }">
+								<i 
+									v-if="'link' in icon"
+									v-bind="attrs" v-on="on"
+									:class="`${icon.link} colored dev-icon`"
+								>
+								</i>
+
+								<i
+									v-else 
+									v-bind="attrs" v-on="on"
+									:class="`svg-icon icon-${icon.name}`"
+								>
+								</i>
+							</template>
+
+							<span>{{ icon.name }}</span>
+						</v-tooltip>
+					</v-col>
+
+					
+					<!-- <v-col 
 						v-for="bio in bios"
 						:key="bio.title"
 						cols="12" md="4"
@@ -29,21 +77,12 @@
 							>
 						</v-avatar>	
 						<h4 class="text-h5 font-weight-light text-center black--text text--darken-1">{{ bio.title }}</h4>
-					</v-col>
+					</v-col> -->
 					
 				</v-row>
+				</v-card>
 			</v-col>
 		</v-row>
-
-
-		<!-- <v-row justify="center" align="center">
-			<v-col class="text-center">
-				<h4 class="text-h4 font-weight-light text-center black--text text--darken-1">Software developer.</h4>
-			</v-col>
-		</v-row> -->
-
-
-	<!-- </v-parallax> -->
 	</v-container>
 </template>
 
@@ -56,24 +95,29 @@ export default {
 			title: "Home",
 			meta: [
 				{hid: 'description', name: 'description', content: "Homepage for Sze Tyng Lee's website"}
+			],
+			link: [
+				{ rel: 'stylesheet', href: "https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" }
 			]
 		}
 	},
 	data() {
 		return {
-			bios: [
-				{
-					title: "Software developer",
-					imgSrc: "programmer.png"
-				},
-				{
-					title: "Travel enthusiast",
-					imgSrc: "travel.png"
-				},
-				{
-					title: "Amateur writer",
-					imgSrc: "writer.png"
-				}
+			brief: "\
+				Software developer @ Gamuda Engineering. M.Eng Electrical and Electronic Engineering\
+			",
+			icons: [
+				{name: 'android', link: 'devicon-android-plain'},
+				{name: 'bootstrap', link: 'devicon-bootstrap-plain-wordmark'},
+				{name: 'cplusplus', link: 'devicon-cplusplus-plain-wordmark'},
+				{name: 'fsharp'},
+				{name: 'git', link: 'devicon-git-plain'},
+				{name: 'javascript', link: 'devicon-javascript-plain'},
+				{name: 'nodejs', link: 'devicon-nodejs-plain-wordmark'},
+				{name: 'postgresql', link: 'devicon-postgresql-plain-wordmark'},
+				// {name: 'python'},
+				{name: 'vuejs', link: 'devicon-vuejs-plain-wordmark'},
+				
 			]
 		}
 	}
@@ -82,17 +126,31 @@ export default {
 
 
 <style scoped>
-.parallax {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-  height: 100%; 
-  /* width:100%;
-	background-attachment: scroll;
-  background-position: center;
-  background-repeat: no-repeat;
-	background-size: cover; */
+.svg-icon {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+}
+
+.icon-fsharp {
+  background: url("../assets/images/skills-icons/fsharp.svg");
+}
+
+.icon-python {
+  background: url("../assets/images/skills-icons/python.svg");
+}
+
+.icons-container {
+	font-size:50px;
+	text-align: center;
+	/* letter-spacing: 5px;	 */
+}
+
+.dev-icon {
+	display: inline-block;
+}
+
+.dev-icon:hover {
+	cursor: default;
 }
 </style>
