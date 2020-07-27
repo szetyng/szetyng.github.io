@@ -112,10 +112,11 @@ export default {
 				{name: 'cplusplus', link: 'devicon-cplusplus-plain-wordmark'},
 				{name: 'fsharp'},
 				{name: 'git', link: 'devicon-git-plain'},
+				{name: 'googlecloudplatform'},
 				{name: 'javascript', link: 'devicon-javascript-plain'},
 				{name: 'nodejs', link: 'devicon-nodejs-plain-wordmark'},
 				{name: 'postgresql', link: 'devicon-postgresql-plain-wordmark'},
-				// {name: 'python'},
+				{name: 'python'},
 				{name: 'vuejs', link: 'devicon-vuejs-plain-wordmark'},
 				
 			]
@@ -137,7 +138,11 @@ export default {
 }
 
 .icon-python {
-  background: url("../assets/images/skills-icons/python.svg");
+  background: no-repeat center/100%  url("../assets/images/skills-icons/python.svg");
+}
+
+.icon-googlecloudplatform {
+	background: no-repeat center/100%  url("../assets/images/skills-icons/google-cloud-platform.svg");
 }
 
 .icons-container {
@@ -150,7 +155,7 @@ export default {
 	display: inline-block;
 }
 
-.dev-icon:hover {
+.dev-icon:hover, .svg-icon:hover {
 	cursor: default;
 }
 </style>
