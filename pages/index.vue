@@ -89,23 +89,23 @@
 
 <script>
 export default {
-	name: "Homepage",
+	name: 'Homepage',
 	head() {
 		return {
-			title: "Home",
+			title: 'Home',
 			meta: [
-				{hid: 'description', name: 'description', content: "Homepage for Sze Tyng Lee's website"}
+				{hid: 'description', name: 'description', content: 'Homepage for Sze Tyng Lee\'s website'}
 			],
 			link: [
-				{ rel: 'stylesheet', href: "https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css" }
+				{ rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css' }
 			]
-		}
+		};
 	},
 	data() {
 		return {
-			brief: "\
+			brief: '\
 				Software developer @ Gamuda Engineering. M.Eng Electrical and Electronic Engineering\
-			",
+			',
 			icons: [
 				{name: 'android', link: 'devicon-android-plain'},
 				{name: 'bootstrap', link: 'devicon-bootstrap-plain-wordmark'},
@@ -120,9 +120,9 @@ export default {
 				{name: 'vuejs', link: 'devicon-vuejs-plain-wordmark'},
 				
 			]
-		}
+		};
 	}
-}
+};
 </script>
 
 

@@ -17,26 +17,26 @@
 export default {
 	head() {
 		return {
-			title: "About",
+			title: 'About',
 			meta: [
-				{hid: 'description', name: 'description', content: "About Sze Tyng Lee"}
+				{hid: 'description', name: 'description', content: 'About Sze Tyng Lee'}
 			]
-		}
+		};
 	},
-	async asyncData ({ $content, params }) {
+	async asyncData ({ $content, }) {
 		const article = await $content('about-me').fetch();
 
-		return { article }
+		return { article };
 	},
 
 	filters: {
 		formatDate: dt => {
 			const options = { year: 'numeric', month: 'long', day: 'numeric'};
 
-			return new Date(dt).toLocaleDateString('en', options)
+			return new Date(dt).toLocaleDateString('en', options);
 		}
 	}
-}
+};
 </script>
 
 

@@ -109,152 +109,152 @@
 
 <script>
 export default {
-	name: "ProjectsPage",
+	name: 'ProjectsPage',
 	head() {
 		return {
-			title: "Projects",
+			title: 'Projects',
 			meta: [
-				{hid: 'description', name: 'description', content: "Portfolifo of Sze Tyng Lee's projects"}
+				{hid: 'description', name: 'description', content: 'Portfolifo of Sze Tyng Lee\'s projects'}
 			]
-		}
+		};
 	},
 	data() {
 		return {
 			projects: [
 				{
 					title: 'Guardrails',
-					description: "\
+					description: '\
 					Designed and built a multi-agent system simulator in F# to investigate the effects of having minimal \
 					recognition of rights to self-organise (i.e. guardrails) on the sustainability of electronic institutions. Using \
 					the method of sociologically-inspired computing, these institutions are designed according to the \
-					<a href='https://en.wikipedia.org/wiki/Elinor_Ostrom#Design_principles_for_Common_Pool_Resource_(CPR)_institution' target='_blank'>principles</a> \
+					<a href=\'https://en.wikipedia.org/wiki/Elinor_Ostrom#Design_principles_for_Common_Pool_Resource_(CPR)_institution\' target=\'_blank\'>principles</a> \
 					proposed by political economist, Elinor Ostrom.\
-					",
-					url: "https://github.com/szetyng/Guardrails",
+					',
+					url: 'https://github.com/szetyng/Guardrails',
 					links: [
 						{
-							url: "https://drive.google.com/open?id=1fzMeVbB9MzWxGHrpk6X85kNun_6NYvJ8OUVmduqiQtc",
-							color: "grey darken-2",
-							title: "Slides"
+							url: 'https://drive.google.com/open?id=1fzMeVbB9MzWxGHrpk6X85kNun_6NYvJ8OUVmduqiQtc',
+							color: 'grey darken-2',
+							title: 'Slides'
 						}
 					],
-					imgSrc: "institution.jpg",
+					imgSrc: 'institution.jpg',
 					expand: false
 				},
 				{
 					title: 'CaterPillar',
-					description: "\
+					description: '\
 						  Developed a smart pill organiser to improve pill adherence and reduce medication errors among \
 							the elderly. The CaterPillar system involves an electronic pillbox and Android applications for \
 							tablets and smartwatches. It learns to provide adaptive reminders based on data regarding the \
-							user's daily routines.\
-					",
-					url: "https://github.com/szetyng/CaterPillar",
+							user\'s daily routines.\
+					',
+					url: 'https://github.com/szetyng/CaterPillar',
 					links: [
 						{
-							url: "https://youtu.be/Fv4SDEJEMSU",
-							color: "grey darken-2",
-							title: "Demo Video"
+							url: 'https://youtu.be/Fv4SDEJEMSU',
+							color: 'grey darken-2',
+							title: 'Demo Video'
 						}
 					],
-					imgSrc: "caterpillar.png",
+					imgSrc: 'caterpillar.png',
 					expand: false
 				},
 				{
 					title: 'neuron',
-					description: "\
+					description: '\
 					  Collaborated with Microsoft to create an extension for Visual Studio Code, which has since been \
-						<a href='https://blogs.msdn.microsoft.com/pythonengineering/2018/11/08/data-science-with-python-in-visual-studio-code/?fbclid=IwAR3M5REwXMSCxgCCiqKez_cMJr4WVYYy1DA3UjjjnhpNGDluQiSo4GnhBk0' target='_blank'>incorporated into their Python extension</a> \
+						<a href=\'https://blogs.msdn.microsoft.com/pythonengineering/2018/11/08/data-science-with-python-in-visual-studio-code/?fbclid=IwAR3M5REwXMSCxgCCiqKez_cMJr4WVYYy1DA3UjjjnhpNGDluQiSo4GnhBk0\' target=\'_blank\'>incorporated into their Python extension</a> \
 						as part of their Data Science features. It combines the \
 						rich experience of using the code editor with the interactive programming model of Jupyter notebook.\
-					",
-					url: "https://github.com/neuron-team/vscode-ipe",
+					',
+					url: 'https://github.com/neuron-team/vscode-ipe',
 					links: [
 						{
-							url: "https://youtu.be/amuV0z9eVg4",
-							color: "grey darken-2",
-							title: "Demo Video"
+							url: 'https://youtu.be/amuV0z9eVg4',
+							color: 'grey darken-2',
+							title: 'Demo Video'
 						}
 					],
-					imgSrc: "neuron.png",
+					imgSrc: 'neuron.png',
 					expand: false
 				},
 				{
 					title: 'Spam Detection',
-					description: "\
+					description: '\
 						Applied the theory learned in Introduction to Machine Learning to classify emails as either spam or ham.\
-					",
-					url: "https://github.com/szetyng/machine-learning-spam",
-					imgSrc: "laptop.png",
+					',
+					url: 'https://github.com/szetyng/machine-learning-spam',
+					imgSrc: 'laptop.png',
 					expand: false
 				},
 				{
 					title: 'ARM Emulator',
-					description: "\
+					description: '\
 						Wrote and fully tested an ARM emulator in F#. The programme is able to parse and consecutively simulate a subset of the \
-						ARM UAL instructions. Aimed to recreate <a href='https://salmanarif.bitbucket.io/visual/' target='_blank'>VisUAL</a>, \
+						ARM UAL instructions. Aimed to recreate <a href=\'https://salmanarif.bitbucket.io/visual/\' target=\'_blank\'>VisUAL</a>, \
 						a visual ARM emulator used in Introduction to Computer Architecture in Imperial College London as an aide in teaching the \
 						ARM assembly language.\
-					",
-					url: "https://github.com/szetyng/HLP5",
-					imgSrc: "arm-emulator.png",
+					',
+					url: 'https://github.com/szetyng/HLP5',
+					imgSrc: 'arm-emulator.png',
 					expand: false
 				},
 				{
-					title: "AceCaddie",
-					description: "\
+					title: 'AceCaddie',
+					description: '\
 						Used an accelerometer to build an IoT device that tracks golf scores automatically when it is \
 						attached to the golf club in use. The accompanying mobile app allows friends to compete against each other.\
-					",
-					url: "https://github.com/szetyng/embedded",
+					',
+					url: 'https://github.com/szetyng/embedded',
 					links: [
 						{
-							url: "https://dharshana1407.wixsite.com/acecaddie",
-							color: "grey darken-2",
-							title: "Website"
+							url: 'https://dharshana1407.wixsite.com/acecaddie',
+							color: 'grey darken-2',
+							title: 'Website'
 						}
 					],
-					imgSrc: "acecaddie.png",
+					imgSrc: 'acecaddie.png',
 					expand: false
 				},
 				{
-					title: "SortBot",
-					description: "\
+					title: 'SortBot',
+					description: '\
 						Implemented a classifier that uses machine vision to sort items into four different recycling categories \
 						for a self-sorting recycling machine. Aims to encourage recyling on the Imperial College London campus by \
 						awarding points to users of the machine through an accompanying mobile app.\
-					",
-					url: "https://github.com/szetyng/sortbot",
+					',
+					url: 'https://github.com/szetyng/sortbot',
 					links: [
 						{
-							url: "http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm",
-							color: "grey darken-2",
-							title: "Website"
+							url: 'http://www.ee.ic.ac.uk/guo.liew15/yr2proj/default.htm',
+							color: 'grey darken-2',
+							title: 'Website'
 						},
 						{
-							url: "https://szetyng.github.io/assets/videos/sortbot.mp4",
-							color: "green darken-2",
-							title: "App Demo"
+							url: 'https://szetyng.github.io/assets/videos/sortbot.mp4',
+							color: 'green darken-2',
+							title: 'App Demo'
 						}
 					],
-					imgSrc: "sortbot.png",
+					imgSrc: 'sortbot.png',
 					expand: false
 				},
 				{
-					title: "2048",
-					description: "\
+					title: '2048',
+					description: '\
 						Recreated the popular 2048 game in C++.\
-					",
-					url: "https://github.com/szetyng/2048",
-					imgSrc: "2048.png",
+					',
+					url: 'https://github.com/szetyng/2048',
+					imgSrc: '2048.png',
 					expand: false
 				}
 			]
-		}
+		};
 	},
 	methods: {
 		displayProjectInfo(project) {
-			console.log(project.title)
+			console.log(project.title);
 
 			project.expand = true;
 
@@ -262,7 +262,7 @@ export default {
 			this.projects[projIdx] = project;
 		},
 		closeProjectInfo(project) {
-			console.log(project.title)
+			console.log(project.title);
 
 			project.expand = false;
 
@@ -272,17 +272,17 @@ export default {
 	},
 	filters: {
 		iconify: title => {
-			if (title === "Website") {
-				return "mdi-open-in-app"
-			} else if (title === "App Demo" || title === "Demo Video") {
-				return "mdi-video"
-			} else if (title === "Slides") {
-				return "mdi-play-box-outline"
+			if (title === 'Website') {
+				return 'mdi-open-in-app';
+			} else if (title === 'App Demo' || title === 'Demo Video') {
+				return 'mdi-video';
+			} else if (title === 'Slides') {
+				return 'mdi-play-box-outline';
 			}
 		}
 	}
 	
-}
+};
 </script>
 
 

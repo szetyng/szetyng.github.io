@@ -63,25 +63,25 @@
 
 <script>
 export default {
-	name: "ContactPage",
+	name: 'ContactPage',
 	head() {
 		return {
-			title: "Contact",
+			title: 'Contact',
 			meta: [
-				{hid: 'description', name: 'description', content: "Contact Sze Tyng Lee"}
+				{hid: 'description', name: 'description', content: 'Contact Sze Tyng Lee'}
 			]
-		}
+		};
 	},
 	data() {
 		return {
 			contacts: [
-				{title: "Github", link: "https://github.com/szetyng", icon: "mdi-github", color: "grey darken-2"},
-				{title: "LinkedIn", link: "https://www.linkedin.com/in/leeszetyng/", icon: "mdi-linkedin", color:"blue darken-2"},
-				{title: "Email", link: "mailto:lee.szetyng@gmail.com", icon: "mdi-email-outline", color: "green darken-2"},
+				{title: 'Github', link: 'https://github.com/szetyng', icon: 'mdi-github', color: 'grey darken-2'},
+				{title: 'LinkedIn', link: 'https://www.linkedin.com/in/leeszetyng/', icon: 'mdi-linkedin', color:'blue darken-2'},
+				{title: 'Email', link: 'mailto:lee.szetyng@gmail.com', icon: 'mdi-email-outline', color: 'green darken-2'},
 			]
-		}
+		};
 	}
-}
+};
 </script>
 
 
