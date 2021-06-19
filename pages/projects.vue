@@ -254,7 +254,7 @@ export default {
 	},
 	methods: {
 		displayProjectInfo(project) {
-			console.log(project.title);
+			// console.log(project.title);
 
 			project.expand = true;
 
@@ -262,7 +262,7 @@ export default {
 			this.projects[projIdx] = project;
 		},
 		closeProjectInfo(project) {
-			console.log(project.title);
+			// console.log(project.title);
 
 			project.expand = false;
 
