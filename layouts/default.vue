@@ -2,7 +2,7 @@
   <v-app>
     <v-container class="normal-navbar hidden-xs-only">
       <v-row justify="center">
-        <v-col cols="12" md="10">
+        <v-col cols="12" md="12">
           <div class="site-info">
             <a href="/" class="site-title">{{ title }}</a>
           </div>
@@ -20,7 +20,7 @@
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col cols="12" md="10">
+        <v-col cols="12" md="12">
           <v-divider></v-divider>
         </v-col>
 
@@ -50,7 +50,7 @@
         </v-col>
       </v-row>
       <v-row justify="center">
-        <v-col cols="12" md="10">
+        <v-col cols="12" md="12">
           <v-divider></v-divider>
         </v-col>
 
@@ -97,26 +97,26 @@
 
 <script>
 export default {
-  data () {
-    return {
-      title: 'Sze Tyng Lee',
-      footer: 'Copyright Sze Tyng Lee | All rights reserved',
-      links: [
-        {title: "about me", link: "/about-me"},
-        {title: "projects", link: "/projects"},
-        {title: "experience", link: "/experience"},
-        // {title: "blog", link: "/blog"},
-        {title: "contact me", link: "/contact"}
-      ]
-    }
-  },
-  computed: {
-    smallScreen() {
-      console.log('HEHEH am i an XS screen?', this.$vuetify.breakpoint.xs);
-      return this.$vuetify.breakpoint.xs 
-    }
-  }
-}
+	data () {
+		return {
+			title: 'Sze Tyng Lee',
+			footer: 'Copyright Sze Tyng Lee | All rights reserved',
+			links: [
+				{title: 'about me', link: '/about-me'},
+				{title: 'projects', link: '/projects'},
+				{title: 'experience', link: '/experience'},
+				{title: 'blog', link: '/blog'},
+				{title: 'contact me', link: '/contact'}
+			]
+		};
+	},
+	computed: {
+		smallScreen() {
+			console.log('HEHEH am i an XS screen?', this.$vuetify.breakpoint.xs);
+			return this.$vuetify.breakpoint.xs; 
+		}
+	}
+};
 </script>
 
 
