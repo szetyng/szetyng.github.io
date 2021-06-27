@@ -1,7 +1,7 @@
 <template>
   <v-app>
 		<!-- Navbar in desktop - a horizontal toolbar -->
-    <v-app-bar app flat hide-on-scroll class="normal-navbar hidden-xs-only">
+    <v-app-bar app flat hide-on-scroll class="normal-navbar hidden-sm-and-down">
       <v-container>
         <!-- Justify center to make sure that the 8 cols are in the middle -->
         <v-row justify="center">
@@ -23,7 +23,7 @@
     </v-app-bar>
 
 		<!-- Navbar in mobile - a horizontal toolbar with title and hamburger setting -->
-    <v-app-bar app flat class="mobile-navbar hidden-sm-and-up">
+    <v-app-bar app flat class="mobile-navbar hidden-md-and-up">
       <v-toolbar-title>
         <a href="/" class="title-text">{{ title }}</a>
       </v-toolbar-title>

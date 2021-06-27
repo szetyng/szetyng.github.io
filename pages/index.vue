@@ -2,11 +2,11 @@
 	<v-container fill-height>
 		<v-row justify="center" align="center">
 			<v-col cols="12" md="8" class="text-center">
-				<OutlinedCard>
+				<OutlinedCard class="card-outer">
 					<template>
 						<v-container fluid>
-						<v-row justify="center" align="center" no-gutters>
-							<v-col cols="12" md="4">
+						<v-row justify="center"  no-gutters>
+							<v-col cols="12" lg="4">
 								<v-row no-gutters justify="center" align="center">
 									<v-col cols="12" class="text-center">
 									<v-img contain width="15em" class="rounded-circle profile-pic" :src="require(`@/assets/images/bios/szetyng-sq.png`)"></v-img>
@@ -19,7 +19,8 @@
 									<v-card-subtitle class="">Software Developer</v-card-subtitle>
 								</v-row>
 							</v-col>
-							<v-col cols="12" md="8">
+
+							<v-col cols="12" lg="8">
 								<v-card-text class="black--text text-justify"> 
 									<p>
 									Hi, I'm Sze Tyng! I'm a software developer currently based in Kuala Lumpur, Malaysia. This portfolio
@@ -33,7 +34,11 @@
 									</p>
 								</v-card-text>
 
-								<v-card-actions class="hidden-xs-only">
+
+								
+								<v-card-actions class="hidden-md-and-down buttons-container">
+
+
 									<v-btn
 										v-for="contact in contacts"
 										:key="contact.title"
@@ -48,9 +53,8 @@
 				
 								</v-card-actions>
 
-								<v-card-actions class="hidden-sm-and-up">
+								<v-card-actions class="hidden-lg-and-up">
 									<v-spacer></v-spacer>
-
 									<v-btn
 										v-for="contact in contacts"
 										:key="contact.title"
@@ -67,38 +71,6 @@
 								</v-card-actions>
 							</v-col>
 						</v-row>
-
-						<!-- <v-row justify="center" align="center">
-							<v-col cols="12" class="text-center">
-								<v-img width="30em" class="rounded-circle" :src="require(`@/assets/images/bios/szetyng-sq.png`)"></v-img>
-							</v-col>
-						</v-row>
-						
-						<v-row justify="center" align="center">
-							<v-col cols="12" class="text-center"><v-card-title class="text-center">Sze Tyng Lee</v-card-title></v-col>
-						</v-row>
-
-						<v-divider></v-divider>
-						
-
-						<v-card-text class="text-center black--text text--darken-1"> 
-
-							Hi! I'm Sze Tyng, a software developer currently based in Kuala Lumpur, Malaysia. I have an M.Eng
-							in Electrical and Electronic Engineering from Imperial College London. My CV is available upon 
-							request, just shoot me an email 
-						</v-card-text> -->
-
-						<!-- <v-card-actions >
-							<v-btn
-								nuxt
-								:to="'/contact'"
-								outlined
-								text
-							>
-								Contact Me
-								<v-icon right>mdi-card-account-details</v-icon>
-							</v-btn>
-						</v-card-actions> -->
 						</v-container>
 					</template>
 				</OutlinedCard>
@@ -114,11 +86,11 @@
 						<v-row justify="center" align="center">
 							<v-card-title class="title-text">Skills</v-card-title>
 						</v-row>
-						<!-- <v-card-title class="title-text">Skills</v-card-title>
-						<v-divider></v-divider> -->
+						<!-- <v-card-title class="title-text">Skills</v-card-title> -->
+						<!-- <v-divider></v-divider> -->
 						
 						<v-row justify="center" align="center">
-							<v-col class="icons-container" v-for="icon in icons" :key="icon.name" cols="4" md="1">
+							<v-col class="icons-container" v-for="icon in icons" :key="icon.name" cols="4" md="2" lg="1">
 								<v-tooltip 
 									bottom
 								>
@@ -247,5 +219,14 @@ export default {
 
 .subtitle-row {
 	margin-top: -30px;
+}
+
+.card-outer {
+	position: relative;
+}
+
+.buttons-container {
+	position: absolute;
+	bottom: 20px;
 }
 </style>
