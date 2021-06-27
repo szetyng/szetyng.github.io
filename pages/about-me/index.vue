@@ -1,12 +1,21 @@
 <template>
 	<v-container>
 		<v-row justify="center">
-			<v-col cols="12" md="10">
-				<h1 class="text-center display-1 font-weight-regular">{{ article.title }}</h1>
+			<v-col cols="12" md="8">
+				<OutlinedCard>
+						<template>
+						<v-card-title class="title-text">{{ article.title }}</v-card-title>
+						<v-card-subtitle class="text-caption font-weight-bold">Post last updated at: {{ article.updatedAt | formatDate }}</v-card-subtitle>
+						<v-divider color=""></v-divider>
+						
+						<v-card-text class="black--text">
+							<nuxt-content :document="article" />
+						</v-card-text>
 
-				<nuxt-content :document="article" />
+						
+						</template>
+				</OutlinedCard>
 
-				<p class="text-caption font-weight-black">Post last updated at: {{ article.updatedAt | formatDate }}</p>
 			</v-col>
 		</v-row>
 	</v-container>
@@ -22,6 +31,9 @@ export default {
 				{hid: 'description', name: 'description', content: 'About Sze Tyng Lee'}
 			]
 		};
+	},
+	components: {
+		OutlinedCard: () => import('@/components/OutlinedCard')
 	},
 	async asyncData ({ $content, }) {
 		const article = await $content('about-me').fetch();
@@ -40,6 +52,3 @@ export default {
 </script>
 
 
-<style scoped>
-
-</style>

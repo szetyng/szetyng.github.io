@@ -1,108 +1,114 @@
 <template>
 	<v-container>
-		<!-- <h1>Projects</h1> -->
-		<v-data-iterator
-			:items="projects"
-			hide-default-footer
-		>
-			<template>
-				<v-row no-gutters justify="center">
-					<v-col cols="12" md="10">
-						<v-row>
-							<v-col
-								v-for="project in projects"
-								:key="project.title"
-								cols="12"
-								sm="12" md="6"
-							>
-								<v-card
-									min-height="300"
+		<v-row justify="center" >
+			<v-col cols="12" md="8">
+			<OutlinedCard>
+				<template>
+					<v-card-title class="title-text">Projects</v-card-title>
+					<v-divider></v-divider>
+					<v-data-iterator
+						:items="projects"
+						hide-default-footer
+						class="projects-iterator-container"
+					>
+						<template>
+							<v-row justify="center">
+								<v-col
+									v-for="project in projects"
+									:key="project.title"
+									cols="12"
+									sm="12" md="12" xl="6"
 								>
-									<!-- Top part of card: either an image of the project or the description of the project -->
-									<!-- Image of the project  -->
 									<v-card
-										height="250px"
-										outlined
-										class="scroll"
+										outlined flat
+										min-height="300"
 									>
-										<v-img
-											v-if="!project.expand"
-											:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
-											height="245px"
-											class="project-img"
-											contain
+										<!-- Top part of card: either an image of the project or the description of the project -->
+										<!-- Image of the project  -->
+										<v-card
+											height="250px"
+											flat
+											class="scroll"
+										>
+											<v-img
+												v-if="!project.expand"
+												:src="require(`~/assets/images/portfolio/${project.imgSrc}`)"
+												height="245px"
+												class="project-img"
+												contain
+												@click="displayProjectInfo(project)"
+											>
+											</v-img>
+
+										<!-- Description of the project -->
+											<v-container v-else fluid>
+												<!-- Close button at the top right corner -->
+												<span class="card-right">
+													<v-btn icon @click="closeProjectInfo(project)">
+														<v-icon color="black">mdi-close</v-icon>
+													</v-btn>
+												</span>
+
+												<!-- Description text in HTML because it includes links  -->
+												<v-card-text>
+													<span v-html="project.description"></span>
+												</v-card-text>
+
+												<v-card-actions>
+													<v-btn 
+														v-for="(link, i) in project.links"
+														:key="i"
+														text outlined
+														:color="link.color"
+														:href="link.url"
+													>
+														{{ link.title }} 
+														<v-icon right>{{ link.title | iconify }}</v-icon>
+													</v-btn>
+												</v-card-actions>
+
+											</v-container>
+										</v-card>
+
+										<v-divider></v-divider>
+
+										<!-- Bottom part of the card: always visible -->
+										<!-- Title row: title + vertical dots icon button  -->
+										<span class="card-right card-top">
+											<v-btn icon @click="displayProjectInfo(project)">
+												<v-icon color="black">
+													mdi-dots-vertical
+												</v-icon>
+											</v-btn>
+										</span>
+
+										<v-card-title
+											class="project-title text-h5 font-weight-light"
 											@click="displayProjectInfo(project)"
 										>
-										</v-img>
+											{{ project.title }}
+										</v-card-title>
 
-									<!-- Description of the project -->
-										<v-container v-else fluid>
-											<!-- Close button at the top right corner -->
-											<span class="card-right">
-												<v-btn icon @click="closeProjectInfo(project)">
-													<v-icon color="black">mdi-close</v-icon>
-												</v-btn>
-											</span>
-
-											<!-- Description text in HTML because it includes links  -->
-											<v-card-text >
-												<span v-html="project.description"></span>
-											</v-card-text>
-
-											<v-card-actions>
-												<v-btn 
-													v-for="(link, i) in project.links"
-													:key="i"
-													dark 
-													elevation="10"
-													tile
-													:color="link.color"
-													:href="link.url"
-												>
-													{{ link.title }} 
-													<v-icon right>{{ link.title | iconify }}</v-icon>
-												</v-btn>
-											</v-card-actions>
-
-										</v-container>
+										<!-- Github link to the project  -->
+										<v-card-actions>
+											<v-btn
+												text
+												:href="project.url"
+												color="deep-orange accent-4"
+											>
+												Github
+											</v-btn>
+										</v-card-actions>
 									</v-card>
+								</v-col>
+							</v-row>
+						</template>
 
-									<!-- Bottom part of the card: always visible -->
-									<!-- Title row: title + vertical dots icon button  -->
-									<span class="card-right card-top">
-										<v-btn icon @click="displayProjectInfo(project)">
-											<v-icon color="black">
-												mdi-dots-vertical
-											</v-icon>
-										</v-btn>
-									</span>
-
-									<v-card-title
-										class="project-title text-h5 font-weight-light"
-										@click="displayProjectInfo(project)"
-									>
-										{{ project.title }}
-									</v-card-title>
-
-									<!-- Github link to the project  -->
-									<v-card-actions>
-										<v-btn
-											text
-											:href="project.url"
-											color="deep-orange accent-4"
-										>
-											Github
-										</v-btn>
-									</v-card-actions>
-								</v-card>
-							</v-col>
-						</v-row>
-					</v-col>
-				</v-row>
-
-			</template>
-
-		</v-data-iterator>
+					</v-data-iterator>
+				</template>
+			</OutlinedCard>
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 
@@ -117,6 +123,9 @@ export default {
 				{hid: 'description', name: 'description', content: 'Portfolifo of Sze Tyng Lee\'s projects'}
 			]
 		};
+	},
+	components: {
+		OutlinedCard: () => import('@/components/OutlinedCard')
 	},
 	data() {
 		return {
@@ -287,6 +296,11 @@ export default {
 
 
 <style scoped>
+.projects-iterator-container {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
 .project-img {
 	margin-left: auto;
 	margin-right: auto;

@@ -2,11 +2,23 @@
   <v-container>
 		<v-row justify="center">
 			<v-col cols="12" md="8">
-				<h1 class="text-center display-1 font-weight-regular">{{ article.title }}</h1>
+				<OutlinedCard>
+					<template>
+						<v-card-title class="title-text">{{ article.title }}</v-card-title>
+						<v-card-subtitle class="text-caption font-weight-bold">Post published at: {{ article.createdAt | formatDate }}</v-card-subtitle>
+
+						<!-- <v-card-text class="text-subtitle-1">{{ article.description }}</v-card-text> -->
+						<!-- <v-card-text class="text-caption font-weight-black">Post last updated at: {{ article.updatedAt | formatDate }}</v-card-text> -->
+						<v-divider></v-divider>
+						<v-card-text class="black--text text--darken-1"><nuxt-content :document="article" /></v-card-text>
+						
+					</template>
+				</OutlinedCard>
+				<!-- <h1 class="text-center display-1 font-weight-regular">{{ article.title }}</h1>
 				<p class="text-subtitle-1">{{ article.description }}</p>
 				<p class="text-caption font-weight-black">Post last updated at: {{ article.updatedAt | formatDate }}</p>
-				<!-- <Author :author="article.author"></Author> -->
-				<!-- <img v-if="article.img" :src="require(`~/assets/blog-images/${article.img}`)" alt="article.alt"> -->
+				<Author :author="article.author"></Author>
+				<img v-if="article.img" :src="require(`~/assets/blog-images/${article.img}`)" alt="article.alt">
 				<nav>
 					<ul>
 						<li v-for="link of article.toc" :key="link.id" :class="{ 'py-0': link.depth === 2, 'ml-2 pb-0': link.depth === 3 }">
@@ -18,7 +30,7 @@
 				<nuxt-content :document="article" />
 
 
-				<PrevNext :prev="prev" :next="next"></PrevNext>
+				<PrevNext :prev="prev" :next="next"></PrevNext> -->
 				
 			</v-col>
 		</v-row>
@@ -31,6 +43,7 @@ export default {
 	components: {
 		// Author: () => import('@/components/Author'),
 		PrevNext: () => import('@/components/PrevNext'),
+		OutlinedCard: () => import('@/components/OutlinedCard'),
 	},
 	async asyncData({ $content, params }) {
 		// params.slug is the string after `blog/`

@@ -1,12 +1,12 @@
 <template>
   <v-app>
 		<!-- Navbar in desktop - a horizontal toolbar -->
-    <v-app-bar app flat class="normal-navbar hidden-xs-only">
+    <v-app-bar app flat hide-on-scroll class="normal-navbar hidden-xs-only">
       <v-container>
         <!-- Justify center to make sure that the 8 cols are in the middle -->
         <v-row justify="center">
           <v-col cols="12" md="8">
-						<a href="/" class="title-text text-overline">{{ title }}</a>
+						<a href="/" class="title-text">{{ title }}</a>
             <v-spacer></v-spacer>
             <div class="nav">
               <a 
@@ -25,7 +25,7 @@
 		<!-- Navbar in mobile - a horizontal toolbar with title and hamburger setting -->
     <v-app-bar app flat class="mobile-navbar hidden-sm-and-up">
       <v-toolbar-title>
-        <a href="/" class="title-text text-overline text-uppercase font-weight-thick">{{ title }}</a>
+        <a href="/" class="title-text">{{ title }}</a>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -38,7 +38,7 @@
 			<v-list dense nav>
 				<v-list-item v-for="(item, i) in links" :key="i" nuxt :to="item.link" class="link">
           <v-list-item-content>
-            <v-list-item-title class="text-uppercase">
+            <v-list-item-title class="text-uppercase text-overline">
               {{ item.title }}
             </v-list-item-title>
           </v-list-item-content>
@@ -62,7 +62,9 @@
                 v-for="social in socials"
                 :key="social.icon"
                 class="mx-4"
-                icon
+                icon link
+								:color="social.color"
+								:href="social.link"
               >
                 <v-icon>{{ social.icon }}</v-icon>
 
@@ -92,20 +94,34 @@ export default {
 			links: [
 				{title: 'about me', link: '/about-me'},
 				{title: 'projects', link: '/projects'},
-				{title: 'experience', link: '/experience'},
+				// {title: 'experience', link: '/experience'},
 				{title: 'blog', link: '/blog'},
-				{title: 'contact me', link: '/contact'}
+				// {title: 'contact me', link: '/contact'}
 			],
 			socials: [
-				{ icon: 'mdi-github', link: ''},
-				{ icon: 'mdi-twitter', link: ''},
-				{ icon: 'mdi-linkedin', link: ''},
-				{ icon: 'mdi-email', link: ''},
+				{title: 'Github', link: 'https://github.com/szetyng', icon: 'mdi-github', color: 'grey darken-2'},
+				{title: 'Twitter', link: 'https://twitter.com/szetyng', icon: 'mdi-twitter', color: 'blue lighten-1'},
+				{title: 'LinkedIn', link: 'https://www.linkedin.com/in/leeszetyng/', icon: 'mdi-linkedin', color:'blue darken-2'},
+				{title: 'Email', link: 'mailto:lee.szetyng@gmail.com', icon: 'mdi-email-outline', color: 'green darken-2'},
 			]
 		};
 	},
 };
 </script>
+
+
+<style>
+/* Unscoped CSS, to be made available to every component when THIS
+component is loaded */
+.title-text {
+  font-size: 20px !important;
+  font-weight: 600;
+	line-height: 2rem;
+	letter-spacing: 0.1666666667em;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+}
+</style>
 
 
 <style scoped>
@@ -121,8 +137,6 @@ export default {
 }
 
 .title-text {
-  font-size: 20px !important;
-  font-weight: 600;
 	float: left;
 }
 
@@ -130,12 +144,8 @@ export default {
 	margin-top: -25px;
 }
 
-.normal-navbar {
-	padding-top: 15px;
-}
-
-.mobile-navbar {
-	padding-top: 8px;
+.main-container {
+	margin-top: -15px;
 }
 
 /* All the links in the mobile horizontal navbar */

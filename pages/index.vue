@@ -1,88 +1,159 @@
 <template>
 	<v-container fill-height>
 		<v-row justify="center" align="center">
-			<v-col class="text-center">
-				<h2 class="text-h2 font-weight-medium text-center black--text text--darken-1">Sze Tyng Lee</h2>
-			</v-col>
-		</v-row>
+			<v-col cols="12" md="8" class="text-center">
+				<OutlinedCard>
+					<template>
+						<v-container fluid>
+						<v-row justify="center" align="center" no-gutters>
+							<v-col cols="12" md="4">
+								<v-row no-gutters justify="center" align="center">
+									<v-col cols="12" class="text-center">
+									<v-img contain width="15em" class="rounded-circle profile-pic" :src="require(`@/assets/images/bios/szetyng-sq.png`)"></v-img>
+									</v-col>
+								</v-row>
+								<v-row no-gutters justify="center" align="center">
+									<v-card-title class="text-center title-text">Sze Tyng Lee</v-card-title>
+								</v-row>
+								<v-row no-gutters justify="center" align="center" class="subtitle-row">
+									<v-card-subtitle class="">Software Developer</v-card-subtitle>
+								</v-row>
+							</v-col>
+							<v-col cols="12" md="8">
+								<v-card-text class="black--text text-justify"> 
+									<p>
+									Hi, I'm Sze Tyng! I'm a software developer currently based in Kuala Lumpur, Malaysia. This portfolio
+									website started off as an assignment in the third year of my undergraduate studies, when I had very
+									little web dev knowledge and built it using the Jekyll framework. I have since redesigned it from scratch 
+									in Nuxt.js + Vue.js! 
+									</p>
 
-		<v-row justify="center" align="center">
-			<v-col class="text-center">
-				<h2 class="text-h4 font-weight-light text-center black--text text--darken-1">Software developer</h2>
-			</v-col>
-		</v-row>
+									<p>
+									You can find out more about me by getting in touch via any of the platforms linked below! 
+									</p>
+								</v-card-text>
 
-		<v-row justify="center" align="center">
-			<v-col class="text-center" cols="12" md="6">
-				<p>
-					M.Eng Electrical and Electronic Engineering from Imperial College London. 
-					CV available upon request.
-				</p>
-			<v-btn
-				nuxt
-				:to="'/contact'"
-				dark
-			>
-				Contact Me
-				<v-icon right>mdi-card-account-details</v-icon>
-			</v-btn>
-			</v-col>
-		</v-row>
+								<v-card-actions class="hidden-xs-only">
+									<v-btn
+										v-for="contact in contacts"
+										:key="contact.title"
+										link
+										:href="contact.link"
+										:color="contact.color"
+										text
+										outlined
+									>
+										{{ contact.title }} <v-icon right>{{ contact.icon }}</v-icon>
+									</v-btn>
+				
+								</v-card-actions>
 
-		<v-row justify="center">
-			<v-col cols="12" md="10">
-				<v-divider></v-divider>
-			</v-col>
-		</v-row>
+								<v-card-actions class="hidden-sm-and-up">
+									<v-spacer></v-spacer>
 
-		<v-row justify="center">
-			<v-col cols="12" md="10">
-				<v-card>
-				<v-card-title class="justify-center text-h4 font-weight-light">Skills</v-card-title>
-				<v-row justify="center" align="center">
-					<v-col class="icons-container" v-for="icon in icons" :key="icon.name" cols="4" md="1">
-						<v-tooltip 
-							bottom
-						>
-							<template v-slot:activator="{ on, attrs }">
-								<i 
-									v-if="'link' in icon"
-									v-bind="attrs" v-on="on"
-									:class="`${icon.link} colored dev-icon`"
-								>
-								</i>
+									<v-btn
+										v-for="contact in contacts"
+										:key="contact.title"
+										link
+										:href="contact.link"
+										:color="contact.color"
+										dark large
+										icon text
+									>
+										<v-icon large>{{ contact.icon }}</v-icon>
+									</v-btn>
+									<v-spacer></v-spacer>
 
-								<i
-									v-else 
-									v-bind="attrs" v-on="on"
-									:class="`svg-icon icon-${icon.name}`"
-								>
-								</i>
-							</template>
+								</v-card-actions>
+							</v-col>
+						</v-row>
 
-							<span>{{ icon.name }}</span>
-						</v-tooltip>
-					</v-col>
+						<!-- <v-row justify="center" align="center">
+							<v-col cols="12" class="text-center">
+								<v-img width="30em" class="rounded-circle" :src="require(`@/assets/images/bios/szetyng-sq.png`)"></v-img>
+							</v-col>
+						</v-row>
+						
+						<v-row justify="center" align="center">
+							<v-col cols="12" class="text-center"><v-card-title class="text-center">Sze Tyng Lee</v-card-title></v-col>
+						</v-row>
 
-					
-					<!-- <v-col 
-						v-for="bio in bios"
-						:key="bio.title"
-						cols="12" md="4"
-						class="text-center"
-					>
-						<v-avatar size="150" color="cyan">
-							<img
-								:src="require(`~/assets/images/bios/${bio.imgSrc}`)"
+						<v-divider></v-divider>
+						
+
+						<v-card-text class="text-center black--text text--darken-1"> 
+
+							Hi! I'm Sze Tyng, a software developer currently based in Kuala Lumpur, Malaysia. I have an M.Eng
+							in Electrical and Electronic Engineering from Imperial College London. My CV is available upon 
+							request, just shoot me an email 
+						</v-card-text> -->
+
+						<!-- <v-card-actions >
+							<v-btn
+								nuxt
+								:to="'/contact'"
+								outlined
+								text
 							>
-						</v-avatar>	
-						<h4 class="text-h5 font-weight-light text-center black--text text--darken-1">{{ bio.title }}</h4>
-					</v-col> -->
-					
-				</v-row>
-				</v-card>
+								Contact Me
+								<v-icon right>mdi-card-account-details</v-icon>
+							</v-btn>
+						</v-card-actions> -->
+						</v-container>
+					</template>
+				</OutlinedCard>
+	
 			</v-col>
 		</v-row>
+
+
+		<v-row justify="center" align="center">
+			<v-col cols="12" md="8" class="text-center">
+				<OutlinedCard>
+					<template>
+						<v-row justify="center" align="center">
+							<v-card-title class="title-text">Skills</v-card-title>
+						</v-row>
+						<!-- <v-card-title class="title-text">Skills</v-card-title>
+						<v-divider></v-divider> -->
+						
+						<v-row justify="center" align="center">
+							<v-col class="icons-container" v-for="icon in icons" :key="icon.name" cols="4" md="1">
+								<v-tooltip 
+									bottom
+								>
+									<template v-slot:activator="{ on, attrs }">
+										<i 
+											v-if="'link' in icon"
+											v-bind="attrs" v-on="on"
+											:class="`${icon.link} colored dev-icon`"
+										>
+										</i>
+
+										<i
+											v-else 
+											v-bind="attrs" v-on="on"
+											:class="`svg-icon icon-${icon.name}`"
+										>
+										</i>
+									</template>
+
+									<span>{{ icon.name }}</span>
+								</v-tooltip>
+							</v-col>
+						</v-row>
+					</template>
+				</OutlinedCard>
+			</v-col>
+		</v-row>
+
+
+			
+
+
+
+
+
 	</v-container>
 </template>
 
@@ -101,14 +172,17 @@ export default {
 			]
 		};
 	},
+	components: {
+		OutlinedCard: () => import('@/components/OutlinedCard'),
+	},
 	data() {
 		return {
 			brief: '\
-				Software developer @ Gamuda Engineering. M.Eng Electrical and Electronic Engineering\
+				Software developer. M.Eng Electrical and Electronic Engineering\
 			',
 			icons: [
-				{name: 'android', link: 'devicon-android-plain'},
-				{name: 'bootstrap', link: 'devicon-bootstrap-plain-wordmark'},
+				// {name: 'android', link: 'devicon-android-plain'},
+				// {name: 'bootstrap', link: 'devicon-bootstrap-plain-wordmark'},
 				{name: 'cplusplus', link: 'devicon-cplusplus-plain-wordmark'},
 				{name: 'fsharp'},
 				{name: 'git', link: 'devicon-git-plain'},
@@ -119,6 +193,12 @@ export default {
 				{name: 'python'},
 				{name: 'vuejs', link: 'devicon-vuejs-plain-wordmark'},
 				
+			],
+			contacts: [
+				{title: 'Github', link: 'https://github.com/szetyng', icon: 'mdi-github', color: 'grey darken-2'},
+				{title: 'Twitter', link: 'https://twitter.com/szetyng', icon: 'mdi-twitter', color: 'blue lighten-1'},
+				{title: 'LinkedIn', link: 'https://www.linkedin.com/in/leeszetyng/', icon: 'mdi-linkedin', color:'blue darken-2'},
+				{title: 'Email', link: 'mailto:lee.szetyng@gmail.com', icon: 'mdi-email-outline', color: 'green darken-2'},
 			]
 		};
 	}
@@ -146,8 +226,9 @@ export default {
 }
 
 .icons-container {
-	font-size:50px;
+	font-size: 50px;
 	text-align: center;
+	/* padding-top: 10px; */
 	/* letter-spacing: 5px;	 */
 }
 
@@ -157,5 +238,14 @@ export default {
 
 .dev-icon:hover, .svg-icon:hover {
 	cursor: default;
+}
+
+.profile-pic {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.subtitle-row {
+	margin-top: -30px;
 }
 </style>
