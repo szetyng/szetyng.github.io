@@ -16,22 +16,28 @@
 									<v-card-title class="text-center title-text">Sze Tyng Lee</v-card-title>
 								</v-row>
 								<v-row no-gutters justify="center" align="center" class="subtitle-row">
-									<v-card-subtitle class="">Software Developer</v-card-subtitle>
+									<v-card-subtitle class="job-title">Software Developer</v-card-subtitle>
 								</v-row>
 							</v-col>
 
 							<v-col cols="12" lg="8">
-								<v-card-text class="black--text text-justify"> 
+								<v-card-text class="black--text text-justify content-text"> 
 									<p>
-									Hi, I'm Sze Tyng! I'm a software developer currently based in Kuala Lumpur, Malaysia. This portfolio
-									website started off as an assignment in the third year of my undergraduate studies, when I had very
-									little web dev knowledge and built it using the Jekyll framework. I have since redesigned it from scratch 
-									in Nuxt.js + Vue.js! 
+									Hi there! I'm Sze Tyng, a software developer currently based in Kuala Lumpur, Malaysia. 
+									Feel free to wander around this website that I built using Nuxt.js + Vue.js. 
 									</p>
 
 									<p>
-									You can find out more about me by getting in touch via any of the platforms linked below! 
+									You can get to know me a little better [here], check out some of my personal [projects], or read 
+									some of my writings in my [blog] (WIP). 
 									</p>
+
+									<p>
+									CV is available upon request, just drop me a message at lee.szetyng@gmail.com or contact me on any 
+									of the platforms linked below!
+									</p>
+
+							
 								</v-card-text>
 
 
@@ -238,5 +244,11 @@ export default {
 .buttons-container {
 	position: absolute;
 	bottom: 20px;
+}
+
+.job-title {
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.1em;
 }
 </style>

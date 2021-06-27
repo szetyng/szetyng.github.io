@@ -117,9 +117,13 @@ component is loaded */
   font-size: 20px !important;
   font-weight: 600;
 	line-height: 2rem;
-	letter-spacing: 0.1666666667em;
+	letter-spacing: 0.1em;
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
+}
+
+.content-text {
+	font-size: 16px !important;
 }
 </style>
 
@@ -138,6 +142,7 @@ component is loaded */
 
 .title-text {
 	float: left;
+	letter-spacing: 0.1666666667em;
 }
 
 .footer-text {
