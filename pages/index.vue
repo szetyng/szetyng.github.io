@@ -156,11 +156,13 @@ export default {
 				// {name: 'android', link: 'devicon-android-plain'},
 				// {name: 'bootstrap', link: 'devicon-bootstrap-plain-wordmark'},
 				{name: 'cplusplus', link: 'devicon-cplusplus-plain-wordmark'},
+				{name: 'fastapi'},
 				{name: 'fsharp'},
 				{name: 'git', link: 'devicon-git-plain'},
 				{name: 'googlecloudplatform'},
 				{name: 'javascript', link: 'devicon-javascript-plain'},
 				{name: 'nodejs', link: 'devicon-nodejs-plain-wordmark'},
+				{name: 'nuxtjs'},
 				{name: 'postgresql', link: 'devicon-postgresql-plain-wordmark'},
 				{name: 'python'},
 				{name: 'vuejs', link: 'devicon-vuejs-plain-wordmark'},
@@ -195,6 +197,14 @@ export default {
 
 .icon-googlecloudplatform {
 	background: no-repeat center/100%  url("../assets/images/skills-icons/google-cloud-platform.svg");
+}
+
+.icon-nuxtjs {
+	background: no-repeat center/100% url("../assets/images/skills-icons/nuxt.svg")
+}
+
+.icon-fastapi {
+	background: no-repeat center/100% url("../assets/images/skills-icons/fastapi.png")
 }
 
 .icons-container {
