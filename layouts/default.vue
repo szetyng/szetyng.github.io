@@ -1,105 +1,93 @@
 <template>
   <v-app>
-    <v-container class="normal-navbar hidden-xs-only">
-      <v-row justify="center">
-        <v-col cols="12" md="12">
-          <div class="site-info">
-            <a href="/" class="site-title">{{ title }}</a>
-          </div>
-          
-          <div class="nav">
-            <a 
-              v-for="(item, i) in links"
-              :key="i"
-              :href="item.link"
-            >
-              {{ item.title }}
-            </a>
-          </div>
-          
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col cols="12" md="12">
-          <v-divider></v-divider>
-        </v-col>
+		<!-- Navbar in desktop - a horizontal toolbar -->
+    <v-app-bar app flat class="normal-navbar hidden-xs-only">
+      <v-container>
+        <!-- Justify center to make sure that the 8 cols are in the middle -->
+        <v-row justify="center">
+          <v-col cols="12" md="8">
+						<a href="/" class="title-text text-overline">{{ title }}</a>
+            <v-spacer></v-spacer>
+            <div class="nav">
+              <a 
+                v-for="(item, i) in links"
+                :key="i"
+                :href="item.link"
+              >
+                {{ item.title }}
+              </a>
+            </div>
+          </v-col>
+        </v-row>      
+      </v-container>
+    </v-app-bar>
 
-      </v-row>
-      
+		<!-- Navbar in mobile - a horizontal toolbar with title and hamburger setting -->
+    <v-app-bar app flat class="mobile-navbar hidden-sm-and-up">
+      <v-toolbar-title>
+        <a href="/" class="title-text text-overline text-uppercase font-weight-thick">{{ title }}</a>
+      </v-toolbar-title>
 
-    </v-container>
-
-
-    <v-container class="mobile-navbar hidden-sm-and-up">
-      <v-row justify="center">
-        <v-col cols="12" md="10">
-          <div class="site-info">
-            <a href="/" class="site-title">{{ title }}</a>
-          </div>
-          
-          <div class="nav">
-            <a 
-              v-for="(item, i) in links"
-              :key="i"
-              :href="item.link"
-            >
-              {{ item.title }}
-            </a>
-          </div>
-          
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col cols="12" md="12">
-          <v-divider></v-divider>
-        </v-col>
-
-      </v-row>
-      
-
-    </v-container>
-
-    
-
-    <!-- <v-app-bar app>
-      <v-btn 
-        text
-        :to="'/'"
-      >
-        <v-toolbar-title>{{ title }}</v-toolbar-title>
-      </v-btn>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn
-          v-for="(item, i) in links"
-          :key="i"
-          :to="item.link"
-          :title="item.title"
-          text
-        >{{ item.title }}</v-btn>
-      </v-toolbar-items>
-    </v-app-bar> -->
+
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    </v-app-bar>
+
+		<!-- Nav drawer for mobile -->
+		<v-navigation-drawer app right temporary class="nav-drawer" v-model="drawer">
+			<v-list dense nav>
+				<v-list-item v-for="(item, i) in links" :key="i" nuxt :to="item.link" class="link">
+          <v-list-item-content>
+            <v-list-item-title class="text-uppercase">
+              {{ item.title }}
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+			</v-list>
+		</v-navigation-drawer>
+    
 
     <v-main>
       <v-container class="main-container">
         <nuxt />
       </v-container>
     </v-main>
-    
-    <v-footer
-      absolute
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }} {{ footer }}</span>
+
+    <v-footer absolute app padless>
+      <v-row justify="center" no-gutters>
+        <v-col cols="12" class="text-center">
+          <v-card color="secondary" flat tile class="text-center">
+            <v-card-text>
+              <v-btn
+                v-for="social in socials"
+                :key="social.icon"
+                class="mx-4"
+                icon
+              >
+                <v-icon>{{ social.icon }}</v-icon>
+
+              </v-btn>
+            </v-card-text>
+
+						
+            <v-card-text class="footer-text">
+              <span>&copy; {{ new Date().getFullYear() }} {{ footer }}</span>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+      
     </v-footer>
   </v-app>
 </template>
 
 <script>
 export default {
+	name: 'DefaultLayout',
 	data () {
 		return {
 			title: 'Sze Tyng Lee',
+			drawer: false,
 			footer: 'Copyright Sze Tyng Lee | All rights reserved',
 			links: [
 				{title: 'about me', link: '/about-me'},
@@ -107,75 +95,86 @@ export default {
 				{title: 'experience', link: '/experience'},
 				{title: 'blog', link: '/blog'},
 				{title: 'contact me', link: '/contact'}
+			],
+			socials: [
+				{ icon: 'mdi-github', link: ''},
+				{ icon: 'mdi-twitter', link: ''},
+				{ icon: 'mdi-linkedin', link: ''},
+				{ icon: 'mdi-email', link: ''},
 			]
 		};
 	},
-	computed: {
-		smallScreen() {
-			console.log('HEHEH am i an XS screen?', this.$vuetify.breakpoint.xs);
-			return this.$vuetify.breakpoint.xs; 
-		}
-	}
 };
 </script>
 
 
 <style scoped>
-.main-container {
-  margin-top: -30px;
+/* Set default background color of app, since this is default layout */
+.v-application {
+  background-color: #F4F4F4;
 }
 
-.normal-navbar .site-info {
-  float: left;
-  margin-top: 23px;
-  font-size: 20px;
+
+/* To make links in the nav drawer have more space */
+.nav-drawer {
+	padding: 2.5em 1.5em 0;
+}
+
+.title-text {
+  font-size: 20px !important;
   font-weight: 600;
+	float: left;
 }
 
-.mobile-navbar .site-info {
-  text-align: center;
-  display: block;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px;
-  font-weight: 600;
+.footer-text {
+	margin-top: -25px;
 }
 
-.normal-navbar .nav {
-  float: right;
-  margin-top: 23px;
-  font-size: 20px;
-  font-weight: 400;
+.normal-navbar {
+	padding-top: 15px;
 }
 
-.mobile-navbar .nav {
-  float: none;
-  margin-top: 9px;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
+.mobile-navbar {
+	padding-top: 8px;
 }
 
-.nav a, .site-info a {
+/* All the links in the mobile horizontal navbar */
+.mobile-navbar a {
   margin-left: 10px;
-  color: #333;
   text-decoration: none;
   cursor: pointer;
 }
 
-
-.normal-navbar .nav a {
-  text-align: right;
-  letter-spacing: 1px;
-}
-
-.nav a:hover, .site-info a:hover {
+/* All the links in the mobile horizontal navbar, on hover */
+.mobile-navbar a:hover {
   color: cadetblue;
 }
 
-.mobile-navbar .nav a {
+/* All the list items in the nav drawer */
+.nav-drawer .link {
+  margin: 1.5em 0 0 0;
+  /* padding: 0.5em 0 0 0; */
+}
+
+/* The links container in the normal navbar */
+.normal-navbar .nav {
+  float: right;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* All the links in the normal horizontal navbar */
+.normal-navbar a {
+  margin-left: 10px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+/* All the links in the normal horizontal navbar, on hover */
+.normal-navbar a:hover {
   color: cadetblue;
 }
 
