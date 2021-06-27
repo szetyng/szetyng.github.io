@@ -1,7 +1,7 @@
 <template>
 	<v-container fill-height>
 		<v-row justify="center" align="center">
-			<v-col cols="12" md="8" class="text-center">
+			<v-col cols="12" lg="8" md="12" class="text-center">
 				<OutlinedCard class="card-outer">
 					<template>
 						<v-container fluid>
@@ -86,7 +86,7 @@
 
 
 		<v-row justify="center" align="center">
-			<v-col cols="12" md="8" class="text-center">
+			<v-col cols="12" md="12" lg="8" class="text-center">
 				<OutlinedCard>
 					<template>
 						<v-row justify="center" align="center">

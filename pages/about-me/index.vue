@@ -1,7 +1,7 @@
 <template>
 	<v-container>
 		<v-row justify="center">
-			<v-col cols="12" md="8">
+			<v-col cols="12" lg="8" md="12">
 				<OutlinedCard>
 						<template>
 						<v-card-title class="title-text">{{ article.title }}</v-card-title>

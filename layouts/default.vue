@@ -5,7 +5,7 @@
       <v-container>
         <!-- Justify center to make sure that the 8 cols are in the middle -->
         <v-row justify="center">
-          <v-col cols="12" md="8">
+          <v-col cols="12" md="12" lg="8">
 						<a href="/" class="title-text">{{ title }}</a>
             <v-spacer></v-spacer>
             <div class="nav">
@@ -63,7 +63,6 @@
                 :key="social.icon"
                 class="mx-4"
                 icon link
-								:color="social.color"
 								:href="social.link"
               >
                 <v-icon>{{ social.icon }}</v-icon>
