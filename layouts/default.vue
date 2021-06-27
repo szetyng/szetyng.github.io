@@ -38,7 +38,7 @@
 			<v-list dense nav>
 				<v-list-item v-for="(item, i) in links" :key="i" nuxt :to="item.link" class="link">
           <v-list-item-content>
-            <v-list-item-title class="text-uppercase text-overline">
+            <v-list-item-title class="text-uppercase title-text">
               {{ item.title }}
             </v-list-item-title>
           </v-list-item-content>
@@ -163,24 +163,36 @@ component is loaded */
 /* All the list items in the nav drawer */
 .nav-drawer .link {
   margin: 1.5em 0 0 0;
-  /* padding: 0.5em 0 0 0; */
+  padding: 0.5em 0 0 0.5em;
 }
 
 /* The links container in the normal navbar */
 .normal-navbar .nav {
   float: right;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
+	margin-right: 10px;
 }
 
-/* All the links in the normal horizontal navbar */
-.normal-navbar a {
-  margin-left: 10px;
+/* Links in the nav (pages) part of navbar */
+.normal-navbar .nav a {
+	margin-left: 20px;
   color: #333;
   text-decoration: none;
   cursor: pointer;
 	text-align: right;
 	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+
+/* Links in the navbar */
+.normal-navbar a {
+  margin-left: 10px;
+  /* color: #333; */
+  text-decoration: none;
+  cursor: pointer;
+	text-align: right;
 }
 
 /* All the links in the normal horizontal navbar, on hover */
