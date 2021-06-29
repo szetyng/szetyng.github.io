@@ -1,40 +1,53 @@
 <template>
 	<v-container fill-height>
 		<v-row justify="center" align="center">
-			<v-col cols="12" lg="8" md="12" class="text-center">
-				<OutlinedCard class="card-outer">
+			<v-col cols="12" md="10" lg="8" class="text-center">
+				<OutlinedCard>
 					<template>
 						<v-container fluid>
-						<v-row justify="center"  no-gutters>
-							<v-col cols="12" lg="4">
+						<v-row justify="center" align="center" no-gutters>
+							<v-col cols="12" lg="4" class="szetyng-col">
 								<v-row no-gutters justify="center" align="center">
 									<v-col cols="12" class="text-center">
-									<v-img contain width="15em" class="rounded-circle profile-pic" :src="require(`@/assets/images/bios/szetyng-sq.png`)"></v-img>
+									<NuxtLink :to="'/about-me'">
+									<v-img 
+										contain width="15em" 
+										class="rounded-circle profile-pic" 
+										:src="require(`@/assets/images/bios/szetyng-sq.png`)"
+									></v-img>
+									</NuxtLink>
 									</v-col>
 								</v-row>
 								<v-row no-gutters justify="center" align="center">
-									<v-card-title class="text-center title-text">Sze Tyng Lee</v-card-title>
+									<v-card-title class="text-center title-text">
+										<NuxtLink :to="'/about-me'">Sze Tyng Lee</NuxtLink>
+									</v-card-title>
 								</v-row>
 								<v-row no-gutters justify="center" align="center" class="subtitle-row">
-									<v-card-subtitle class="job-title">Software Developer</v-card-subtitle>
+									<v-card-subtitle class="job-title">
+										<NuxtLink :to="'/about-me'">Software Developer</NuxtLink>
+									</v-card-subtitle>
 								</v-row>
 							</v-col>
 
 							<v-col cols="12" lg="8">
-								<v-card-text class="black--text text-justify content-text"> 
+								<v-card-text class="black--text text-justify content-text introduction-text"> 
 									<p>
 									Hi there! I'm Sze Tyng, a software developer currently based in Kuala Lumpur, Malaysia. 
-									Feel free to wander around this website that I built using Nuxt.js + Vue.js. 
+									Feel free to wander around and let me know what you think. This site was built using 
+									Nuxt.js + Vue.js by yours truly.
 									</p>
 
 									<p>
-									You can get to know me a little better [here], check out some of my personal [projects], or read 
-									some of my writings in my [blog] (WIP). 
+									It started off as a <NuxtLink :to="'/projects'">portfolio</NuxtLink> to showcase some of my personal
+									projects, and I eventually added a <NuxtLink :to="'/blog'">blog</NuxtLink> section to share some of my 
+									thoughts and musings with the world wide web!
 									</p>
 
 									<p>
-									CV is available upon request, just drop me a message at lee.szetyng@gmail.com or contact me on any 
-									of the platforms linked below!
+									My CV is available upon request, just drop me a message at 
+									<a href="mailto:lee.szetyng@gmail.com">lee.szetyng@gmail.com</a> 
+									or contact me on any of the platforms linked below.
 									</p>
 
 							
@@ -42,7 +55,7 @@
 
 
 								
-								<v-card-actions class="hidden-md-and-down buttons-container">
+								<v-card-actions class="hidden-md-and-down">
 
 
 									<v-btn
@@ -237,18 +250,18 @@ export default {
 	margin-top: -30px;
 }
 
-.card-outer {
-	position: relative;
-}
-
-.buttons-container {
-	position: absolute;
-	bottom: 20px;
-}
-
 .job-title {
 	font-size: 15px;
 	font-weight: 500;
 	letter-spacing: 0.1em;
+}
+
+.szetyng-col a {
+	text-decoration: none !important;
+}
+
+.introduction-text a {
+	text-decoration: none;
+	border-bottom: black dotted 2px;
 }
 </style>

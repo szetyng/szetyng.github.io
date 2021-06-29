@@ -5,7 +5,7 @@
       <v-container>
         <!-- Justify center to make sure that the 8 cols are in the middle -->
         <v-row justify="center">
-          <v-col cols="12" md="12" lg="8">
+          <v-col cols="12" md="10" lg="8">
 						<a href="/" class="title-text">{{ title }}</a>
             <v-spacer></v-spacer>
             <div class="nav">
@@ -45,7 +45,6 @@
         </v-list-item>
 			</v-list>
 		</v-navigation-drawer>
-    
 
     <v-main>
       <v-container class="main-container">
@@ -69,7 +68,8 @@
 
               </v-btn>
             </v-card-text>
-
+						
+              <!-- {{ screenSize }} -->
 						
             <v-card-text class="footer-text">
               <span>&copy; {{ new Date().getFullYear() }} {{ footer }}</span>
@@ -105,6 +105,17 @@ export default {
 			]
 		};
 	},
+
+	computed: {
+		screenSize() {
+			if (this.$vuetify.breakpoint.xs) return 'xs';
+			else if (this.$vuetify.breakpoint.sm) return 'sm';
+			else if (this.$vuetify.breakpoint.md) return 'md';
+			else if (this.$vuetify.breakpoint.lg) return 'lg';
+			else if (this.$vuetify.breakpoint.xl) return 'xl';
+			else return 'error';
+		}
+	}
 };
 </script>
 
@@ -113,7 +124,7 @@ export default {
 /* Unscoped CSS, to be made available to every component when THIS
 component is loaded */
 .title-text {
-  font-size: 20px !important;
+  font-size: 22px !important;
   font-weight: 600;
 	line-height: 2rem;
 	letter-spacing: 0.1em;
@@ -141,7 +152,8 @@ component is loaded */
 
 .title-text {
 	float: left;
-	letter-spacing: 0.1666666667em;
+	letter-spacing: 0.1em;
+	font-size: 18px !important;
 }
 
 .footer-text {
@@ -173,7 +185,7 @@ component is loaded */
 /* The links container in the normal navbar */
 .normal-navbar .nav {
   float: right;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: 600;
 	margin-right: 10px;
 }
@@ -193,10 +205,10 @@ component is loaded */
 /* Links in the navbar */
 .normal-navbar a {
   margin-left: 10px;
-  /* color: #333; */
   text-decoration: none;
   cursor: pointer;
 	text-align: right;
+	font-size: 18px;
 }
 
 /* All the links in the normal horizontal navbar, on hover */

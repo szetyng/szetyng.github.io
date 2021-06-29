@@ -9,6 +9,18 @@ img: test.jpg
 alt: test picture
 ---
 
+# This is a big header
+The quick brown fox runs over the lazy dog. My name is Sze Tyng. How are you, how is everyone? But now im all fucked up out in LA, 'cause I cared more about, what other people say. :(
+
+Hello there, what's going on. Wwowowoowowo idk what im typing
+
+
+jkdaskdjlkasjdljkfhsdjkfhjkim eiruoieuf adiujdjklasdk wierusdfnari asdkjasdkwif s asiduadisjdjw faiopdaoid kdaskjwdiahnc awdoiawdmask wriue
+
+jsadklasjdasdj asdkljasdlk
+
+asdklsjdlasd
+
 ## Writing content
 
 Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
@@ -47,6 +59,14 @@ This is some more info
 
 This is some more info
 
-export default {
-  nuxt: 'is the best'
-}
+# Hello
+Hello there, the angel from my nightmare, the shadow in the background of the morgue.
+The unsuspecting valley of the darkness in the shadow omg 
+I've forgotten the lyrics
+
+I have a mechanical keyboard and I'm kinda playing around with the RGB backlight right now
+and I've got it set on a weird setting where the light only lights up when you tap on the key.
+Starting to realise that I might actually be able to touch type. 
+
+The quick brown fox jumps over the lazy dog. Ok i kinda know where the keys roughly are in the keyboard but
+I dont know the layout for sure and it leads to a lot of typos so im going to use a different backlight setting

@@ -1,16 +1,14 @@
 <template>
   <v-container>
 		<v-row justify="center">
-			<v-col cols="12" md="12" lg="8">
+			<v-col cols="12" md="10" lg="8">
 				<OutlinedCard>
 					<template>
 						<v-card-title class="title-text">{{ article.title }}</v-card-title>
 						<v-card-subtitle class="text-caption font-weight-bold">Post published at: {{ article.createdAt | formatDate }}</v-card-subtitle>
-
-						<!-- <v-card-text class="text-subtitle-1">{{ article.description }}</v-card-text> -->
-						<!-- <v-card-text class="text-caption font-weight-black">Post last updated at: {{ article.updatedAt | formatDate }}</v-card-text> -->
 						<v-divider></v-divider>
-						<v-card-text class="black--text text--darken-1"><nuxt-content :document="article" /></v-card-text>
+
+						<v-card-text class="black--text content-text"><nuxt-content :document="article" /></v-card-text>
 						
 					</template>
 				</OutlinedCard>
@@ -72,26 +70,33 @@ export default {
 
 
 <style >
-.nuxt-content h2 {
-	font-weight: bold;
-	font-size: 28px;
-}
-.nuxt-content h3 {
+.nuxt-content h1 {
 	font-weight: bold;
 	font-size: 22px;
+	letter-spacing: 0.025em;
+	margin-bottom: 10px;
 }
 
+.nuxt-content h2 {
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 0.02em;
+	margin-bottom: 10px;
+}
 
-/* .icon.icon-link {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: 20px 20px;
-} */
+.nuxt-content h3 {
+	font-weight: bold;
+	font-size: 18px;
+	letter-spacing: 0.01em;
+	margin-bottom: 10px;
+}
+
 
 .nuxt-content-highlight {
   position: relative; 
+	margin-bottom: 20px;
 }
+
 .nuxt-content-highlight .filename {
 	position: absolute;
 	right: 0;
