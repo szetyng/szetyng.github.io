@@ -10,6 +10,9 @@
 
 						<v-card-text class="black--text content-text"><nuxt-content :document="article" /></v-card-text>
 						
+						<v-card-actions>
+							<PrevNext :prev="prev" :next="next"></PrevNext> 
+						</v-card-actions>
 					</template>
 				</OutlinedCard>
 				<!-- <h1 class="text-center display-1 font-weight-regular">{{ article.title }}</h1>
@@ -25,10 +28,10 @@
 					</ul>
 				</nav>
 
-				<nuxt-content :document="article" />
+				<nuxt-content :document="article" /> -->
 
 
-				<PrevNext :prev="prev" :next="next"></PrevNext> -->
+				
 				
 			</v-col>
 		</v-row>

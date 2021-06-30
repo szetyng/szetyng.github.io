@@ -8,7 +8,7 @@
 						<v-card-subtitle class="text-caption font-weight-bold">Post last updated at: {{ article.updatedAt | formatDate }}</v-card-subtitle>
 						<v-divider color=""></v-divider>
 						
-						<v-card-text class="black--text">
+						<v-card-text class="black--text content-text">
 							<nuxt-content :document="article" />
 						</v-card-text>
 
