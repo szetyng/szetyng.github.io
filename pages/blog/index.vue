@@ -4,19 +4,26 @@
 				<v-col cols="12" md="10" lg="8">
 					<OutlinedCard>
 						<template>
-							<!-- TODO: this should be a data iterator -->
 							<v-card-title class="title-text">Blog</v-card-title>
 							<v-divider></v-divider>
 
-							<v-card outlined flat class="my-4 mx-4" v-for="article of articles" :key="article.slug" nuxt :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-
-							<!-- <img :src="article.img" /> -->
+							<v-data-iterator
+								:items="articles"
+							>
+								<template>
+									<v-card 
+										v-for="article of articles" :key="article.slug"
+										outlined flat nuxt
+										:to="{ name: 'blog-slug', params: { slug: article.slug } }"
+										class="my-4 mx-4"
+									>
+										<!-- <img :src="article.img" /> -->
 			
-								<v-card-title>{{ article.title }}</v-card-title>
-								<v-card-subtitle>{{ article.description }}</v-card-subtitle>
-
-
-							</v-card>
+										<v-card-title>{{ article.title }}</v-card-title>
+										<v-card-subtitle>{{ article.description }}</v-card-subtitle>
+									</v-card>
+								</template>
+							</v-data-iterator>
 						</template>
 					</OutlinedCard>
 			</v-col>
