@@ -3,9 +3,8 @@
 		<v-row justify="center" >
 			<v-col cols="12" md="10" lg="8">
 			<OutlinedCard>
+				<template v-slot:title>Projects</template>
 				<template>
-					<v-card-title class="title-text">Projects</v-card-title>
-					<v-divider></v-divider>
 					<v-data-iterator
 						:items="projects"
 						hide-default-footer

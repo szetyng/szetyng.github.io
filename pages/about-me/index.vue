@@ -3,16 +3,11 @@
 		<v-row justify="center">
 			<v-col cols="12" md="10" lg="8">
 				<OutlinedCard>
-						<template>
-						<v-card-title class="title-text">{{ article.title }}</v-card-title>
-						<v-card-subtitle class="text-caption font-weight-bold">Post last updated at: {{ article.updatedAt | formatDate }}</v-card-subtitle>
-						<v-divider color=""></v-divider>
+						<template v-slot:title>{{ article.title }}</template>
+						<template v-slot:subtitle>Post last updated at: {{ article.updatedAt | formatDate }}</template>
 						
-						<v-card-text class="black--text content-text">
+						<template v-slot:defaultContent>
 							<nuxt-content :document="article" />
-						</v-card-text>
-
-						
 						</template>
 				</OutlinedCard>
 
@@ -50,5 +45,4 @@ export default {
 	}
 };
 </script>
-
 

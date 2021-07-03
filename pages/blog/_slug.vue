@@ -3,14 +3,23 @@
 		<v-row justify="center">
 			<v-col cols="12" md="10" lg="8">
 				<OutlinedCard>
-					<template>
-						<v-card-title class="title-text">{{ article.title }}</v-card-title>
-						<v-card-subtitle class="text-caption font-weight-bold">Post published at: {{ article.createdAt | formatDate }}</v-card-subtitle>
-						<v-divider></v-divider>
-
-						<v-card-text class="black--text content-text"><nuxt-content :document="article" /></v-card-text>
+					<template v-slot:title>{{ article.title }}</template>
+					<template v-slot:subtitle>Post published at: {{ article.createdAt | formatDate }}</template>
+					<template v-slot:defaultContent>
+						<nuxt-content :document="article" />
+					</template>
 						
-						<v-card-actions>
+					<template>
+						<v-card-actions class="card-tags">
+							<v-chip 
+								v-for="tag in article.tags" :key="tag" 
+								outlined small color="teal darken-4"
+								class="mr-4 text-overline"
+							>
+								{{ tag }}
+							</v-chip>
+						</v-card-actions>	
+						<v-card-actions class="card-prevnext">
 							<PrevNext :prev="prev" :next="next"></PrevNext> 
 						</v-card-actions>
 					</template>
@@ -46,6 +55,7 @@ export default {
 		PrevNext: () => import('@/components/PrevNext'),
 		OutlinedCard: () => import('@/components/OutlinedCard'),
 	},
+
 	async asyncData({ $content, params }) {
 		// params.slug is the string after `blog/`
 		const article = await $content('articles', params.slug).fetch();
@@ -116,5 +126,15 @@ export default {
 
 .nuxt-content-highlight code {
 	background-color: transparent;
+}
+
+.card-tags {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.card-prevnext {
+	padding-left: 25px;
+	padding-right: 25px;
 }
 </style>

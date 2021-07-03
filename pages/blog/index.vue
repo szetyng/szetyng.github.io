@@ -3,10 +3,8 @@
 		<v-row justify="center">
 				<v-col cols="12" md="10" lg="8">
 					<OutlinedCard>
+						<template v-slot:title>Blog</template>
 						<template>
-							<v-card-title class="title-text">Blog</v-card-title>
-							<v-divider></v-divider>
-
 							<v-data-iterator
 								:items="articles"
 							>
@@ -19,8 +17,17 @@
 									>
 										<!-- <img :src="article.img" /> -->
 			
-										<v-card-title>{{ article.title }}</v-card-title>
+										<v-card-title class="article-title">{{ article.title }}</v-card-title>
 										<v-card-subtitle>{{ article.description }}</v-card-subtitle>
+										<v-card-actions>
+											<v-chip
+												v-for="tag in article.tags" :key="tag"
+												outlined small color="teal darken-4"
+												class="mx-2 text-overline"
+											>
+												{{ tag }}
+											</v-chip>
+										</v-card-actions>
 									</v-card>
 								</template>
 							</v-data-iterator>
@@ -40,7 +47,7 @@ export default {
 	},
 	async asyncData({ $content, }) {
 		const articles = await $content('articles')
-			.only(['title', 'description', 'img', 'slug', 'author'])
+			.only(['title', 'description', 'img', 'slug', 'author', 'tags'])
 			.sortBy('createdAt', 'asc')
 			.fetch();
 
@@ -51,4 +58,9 @@ export default {
 };
 </script>
 
-
+<style scoped>
+.article-title {
+	/* Overwrite card title's word break properties */
+	word-break: break-word;
+}
+</style>

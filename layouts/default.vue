@@ -130,6 +130,8 @@ component is loaded */
 	letter-spacing: 0.1em;
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
+  /* Overwrite card title's word break properties */
+	word-break: break-word;
 }
 
 .content-text {
