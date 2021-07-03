@@ -46,3 +46,18 @@ export default {
 };
 </script>
 
+
+<style>
+.nuxt-content img {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+	border-radius: 50%;
+}
+
+.nuxt-content a {
+	text-decoration: none;
+	border-bottom: black dotted 2px;
+}
+</style>

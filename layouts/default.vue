@@ -156,6 +156,7 @@ component is loaded */
 	float: left;
 	letter-spacing: 0.1em;
 	font-size: 18px !important;
+  font-family: "Helvetica", "sans-serif";
 }
 
 .footer-text {
@@ -190,6 +191,7 @@ component is loaded */
   /* font-size: 20px; */
   font-weight: 600;
 	margin-right: 10px;
+	font-family: "Helvetica", "sans-serif";
 }
 
 /* Links in the nav (pages) part of navbar */

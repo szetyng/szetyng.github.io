@@ -33,7 +33,8 @@
 							<v-col cols="12" lg="8">
 								<v-card-text class="black--text text-justify content-text introduction-text"> 
 									<p>
-									Hi there! I'm Sze Tyng, a software developer currently based in Kuala Lumpur, Malaysia. 
+									Hi there! I'm Sze Tyng, an MEng Electrical and Electronic Engineering graduate from Imperial
+									College London. I am now a software developer currently based in Kuala Lumpur, Malaysia. 
 									Feel free to wander around and let me know what you think. This site was built using 
 									Nuxt.js + Vue.js by yours truly.
 									</p>
@@ -99,7 +100,7 @@
 
 
 		<v-row justify="center" align="center">
-			<v-col cols="12" md="12" lg="8" class="text-center">
+			<v-col cols="12" md="10" lg="8" class="text-center">
 				<OutlinedCard>
 					<template>
 						<v-row justify="center" align="center">

@@ -23,6 +23,7 @@
 											<v-chip
 												v-for="tag in article.tags" :key="tag"
 												outlined small color="teal darken-4"
+												:ripple="false"
 												class="mx-2 text-overline"
 											>
 												{{ tag }}
@@ -48,7 +49,7 @@ export default {
 	async asyncData({ $content, }) {
 		const articles = await $content('articles')
 			.only(['title', 'description', 'img', 'slug', 'author', 'tags'])
-			.sortBy('createdAt', 'asc')
+			.sortBy('createdAt', 'desc')
 			.fetch();
 
 		return {

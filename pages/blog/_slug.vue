@@ -10,7 +10,7 @@
 					</template>
 						
 					<template>
-						<v-card-actions class="card-tags">
+						<v-card-actions v-if="'tags' in article" class="card-tags">
 							<v-chip 
 								v-for="tag in article.tags" :key="tag" 
 								outlined small color="teal darken-4"
