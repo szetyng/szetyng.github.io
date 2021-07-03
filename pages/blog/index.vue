@@ -43,6 +43,14 @@
 <script>
 export default {
 	name: 'BlogHomepage',
+	head() {
+		return {
+			title: 'Blog',
+			meta: [
+				{hid: 'description', name: 'description', content: 'Sze Tyng Lee\'s blog.'}
+			]
+		};
+	},
 	components: {
 		OutlinedCard: () => import('@/components/OutlinedCard')
 	},

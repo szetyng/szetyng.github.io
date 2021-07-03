@@ -50,6 +50,14 @@
 
 <script>
 export default {
+	head() {
+		return {
+			title: this.article.title,
+			meta: [
+				{hid: 'description', name: 'description', content: `Sze Tyng Lee's blog post - ${this.article.description}`}
+			]
+		};
+	},
 	components: {
 		// Author: () => import('@/components/Author'),
 		PrevNext: () => import('@/components/PrevNext'),
