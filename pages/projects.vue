@@ -294,7 +294,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 .projects-iterator-container {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -332,5 +332,10 @@ export default {
 
 .scroll {
 	overflow-y: auto;
+}
+
+.v-card__text a {
+	text-decoration: none;
+	border-bottom: black dotted 2px;
 }
 </style>
