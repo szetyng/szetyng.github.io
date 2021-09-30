@@ -49,7 +49,7 @@
 												</span>
 
 												<!-- Description text in HTML because it includes links  -->
-												<v-card-text>
+												<v-card-text class="project-text">
 													<span v-html="project.description"></span>
 												</v-card-text>
 
@@ -334,7 +334,7 @@ export default {
 	overflow-y: auto;
 }
 
-.v-card__text a {
+.project-text a {
 	text-decoration: none;
 	border-bottom: black dotted 2px;
 }
